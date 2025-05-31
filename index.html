@@ -95,7 +95,7 @@
         }
 
         .menu-closed {
-            transform: translateX(-100%);
+            transform: translateX(100%); /* Changed to slide from right for better UX */
         }
 
         /* Back to top button styling */
@@ -130,6 +130,41 @@
         .animate-on-scroll.in-view {
             opacity: 1;
             transform: translateY(0);
+        }
+
+        /* Adjustments for smaller screens, specifically for iPhone 14 Pro Max vertical view */
+        @media (max-width: 767px) { /* Tailwind's 'md' breakpoint is 768px */
+            .hero-section h1 {
+                font-size: 3.5rem; /* Slightly smaller for better fit on mobile */
+            }
+            .hero-section p {
+                font-size: 1.125rem; /* Smaller paragraph text */
+            }
+            .section-title {
+                font-size: 2.5rem; /* Smaller section titles */
+            }
+            .menu-item-card img {
+                height: 180px; /* Consistent height for menu item images */
+            }
+            .menu-item-card h3 {
+                font-size: 1.5rem; /* Smaller menu item titles */
+            }
+            .menu-item-card p {
+                font-size: 0.875rem; /* Smaller menu item descriptions */
+            }
+            .menu-item-card .font-semibold {
+                font-size: 1.125rem; /* Smaller price text */
+            }
+            #iletisim .flex-col {
+                align-items: center; /* Center contact info on mobile */
+                text-align: center;
+            }
+            #iletisim .flex-col > p {
+                justify-content: center; /* Center icons with text */
+            }
+            #iletisim .w-full.h-64.md\:h-full {
+                height: 300px; /* Ensure map has enough height on mobile */
+            }
         }
     </style>
 </head>
@@ -182,7 +217,7 @@
                 </div>
             </div>
         </div>
-        <div id="mobile-menu" class="md:hidden fixed inset-0 bg-white/95 backdrop-blur-md z-40 menu-closed p-6 space-y-4 flex flex-col">
+        <div id="mobile-menu" class="md:hidden fixed inset-y-0 right-0 bg-white/95 backdrop-blur-md z-40 w-3/4 menu-closed p-6 space-y-4 flex flex-col shadow-lg">
             <div class="flex justify-between items-center mb-8">
                 <span class="text-2xl font-playfair font-bold text-blue-600">Mazi Cafe Menü</span>
                 <button id="close-mobile-menu-button" class="text-gray-600 hover:text-blue-600">
@@ -225,7 +260,8 @@
     </header>
 
     <section id="hosgeldiniz" class="hero-section min-h-[70vh] md:h-[calc(100vh-5rem)] flex items-center justify-center text-white relative">
-        <div class="absolute inset-0 bg-black/50"></div> <div class="text-center z-10 p-6 max-w-4xl">
+        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="text-center z-10 p-6 max-w-4xl">
             <h1 class="text-4xl sm:text-5xl md:text-7xl font-playfair font-extrabold mb-4 sm:mb-6 drop-shadow-2xl leading-tight">
                 Mazi Cafe Beach Restaurant
             </h1>
@@ -244,7 +280,7 @@
             <h2 class="section-title text-3xl sm:text-4xl font-playfair font-bold text-center text-slate-700 mb-10 sm:mb-12">Hakkımızda</h2>
             <div class="flex flex-col md:flex-row items-center gap-8 md:gap-10 bg-white rounded-xl shadow-lg p-6 sm:p-8 md:p-12">
                 <div class="md:w-1/2">
-                    <img src="https://placehold.co/800x600/D4E6F1/333333?text=Mazi+Cafe+İç+Mekan" alt="[Image of Mazi Cafe Interior]" class="rounded-xl shadow-md w-full h-auto object-cover">
+                    <img src="https://placehold.co/800x600/D4E6F1/333333?text=Mazi+Cafe+%C4%B0%C3%A7+Mekan" alt="[Mazi Cafe İç Mekan Resmi]" class="rounded-xl shadow-md w-full h-auto object-cover">
                 </div>
                 <div class="md:w-1/2 text-center md:text-left">
                     <h3 class="text-2xl sm:text-3xl font-playfair font-semibold text-slate-700 mb-3 sm:mb-4">Mazi Cafe'ye Hoş Geldiniz!</h3>
@@ -281,9 +317,9 @@
 
         <section id="kahvaltilar" class="py-12 md:py-16 animate-on-scroll">
             <h2 class="section-title text-3xl sm:text-4xl font-playfair font-bold text-center text-slate-700 mb-10 sm:mb-12">Kahvaltılar</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                 <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/F0F8FF/333333?text=Serpme+Kahvaltı" alt="[Image of Spread Breakfast]" class="w-full h-56 object-cover">
+                    <img src="https://placehold.co/600x400/F0F8FF/333333?text=Serpme+Kahvalt%C4%B1" alt="[Serpme Kahvaltı Resmi]" class="w-full h-56 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl sm:text-2xl font-semibold font-playfair text-slate-700 mb-2">Serpme Kahvaltı</h3>
                         <p class="text-sm text-gray-600 mb-3">Peynir çeşitleri, zeytin, bal, kaymak, reçel, domates, salatalık, sigara böreği, menemen ve sınırsız çay.</p>
@@ -291,7 +327,7 @@
                     </div>
                 </div>
                 <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/FFFACD/333333?text=Sahanda+Yumurta" alt="[Image of Fried Egg]" class="w-full h-56 object-cover">
+                    <img src="https://placehold.co/600x400/FFFACD/333333?text=Sahanda+Yumurta" alt="[Sahanda Yumurta Resmi]" class="w-full h-56 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl sm:text-2xl font-semibold font-playfair text-slate-700 mb-2">Sahanda Yumurta</h3>
                         <p class="text-sm text-gray-600 mb-3">Tereyağında pişirilmiş, isteğe göre sucuklu veya peynirli.</p>
@@ -299,7 +335,7 @@
                     </div>
                 </div>
                 <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/F5DEB3/333333?text=Pişi" alt="[Image of Pişi (Fried Dough)]" class="w-full h-56 object-cover">
+                    <img src="https://placehold.co/600x400/F5DEB3/333333?text=Pi%C5%9Fi" alt="[Pişi (Kızarmış Hamur) Resmi]" class="w-full h-56 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl sm:text-2xl font-semibold font-playfair text-slate-700 mb-2">Ev Yapımı Pişi</h3>
                         <p class="text-sm text-gray-600 mb-3">Sıcak sıcak servis edilen, peynir ve zeytin ezmesi ile.</p>
@@ -311,9 +347,9 @@
 
         <section id="baslangiclar" class="py-12 md:py-16 bg-sky-50 rounded-xl my-10 p-6 md:p-10 animate-on-scroll">
             <h2 class="section-title text-3xl sm:text-4xl font-playfair font-bold text-center text-slate-700 mb-10 sm:mb-12">Başlangıçlar</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                 <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/A0D2DB/333333?text=Meze+Tabağı" alt="[Image of Meze Platter]" class="w-full h-56 object-cover">
+                    <img src="https://placehold.co/600x400/A0D2DB/333333?text=Meze+Taba%C4%9F%C4%B1" alt="[Meze Tabağı Resmi]" class="w-full h-56 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl sm:text-2xl font-semibold font-playfair text-slate-700 mb-2">Serpme Meze Tabağı</h3>
                         <p class="text-sm text-gray-600 mb-3">Günlük hazırlanan, Ege'nin taptaze mezelerinden oluşan zengin bir seçki: Haydari, Atom, Şakşuka, Ezme, Semizotu.</p>
@@ -321,7 +357,7 @@
                     </div>
                 </div>
                 <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/FAD02E/333333?text=Kalamar+Tava" alt="[Image of Fried Calamari]" class="w-full h-56 object-cover">
+                    <img src="https://placehold.co/600x400/FAD02E/333333?text=Kalamar+Tava" alt="[Kalamar Tava Resmi]" class="w-full h-56 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl sm:text-2xl font-semibold font-playfair text-slate-700 mb-2">Çıtır Kalamar Tava</h3>
                         <p class="text-sm text-gray-600 mb-3">Özel sosuyla marine edilmiş, altın renginde kızartılmış taze kalamar, tarator sos eşliğinde.</p>
@@ -329,7 +365,7 @@
                     </div>
                 </div>
                 <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/E0E0E0/333333?text=Sigara+Böreği" alt="[Image of Cigarette Borek]" class="w-full h-56 object-cover">
+                    <img src="https://placehold.co/600x400/E0E0E0/333333?text=Sigara+B%C3%B6re%C4%9Fi" alt="[Sigara Böreği Resmi]" class="w-full h-56 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl sm:text-2xl font-semibold font-playfair text-slate-700 mb-2">Ev Yapımı Sigara Böreği</h3>
                         <p class="text-sm text-gray-600 mb-3">İncecik yufkadan, peynirli iç harcıyla hazırlanmış, çıtır çıtır.</p>
@@ -337,7 +373,7 @@
                     </div>
                 </div>
                 <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/FFD700/333333?text=Patates+Kızartması" alt="[Image of French Fries]" class="w-full h-56 object-cover">
+                    <img src="https://placehold.co/600x400/FFD700/333333?text=Patates+K%C4%B1zartmas%C4%B1" alt="[Patates Kızartması Resmi]" class="w-full h-56 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl sm:text-2xl font-semibold font-playfair text-slate-700 mb-2">Parmak Patates Kızartması</h3>
                         <p class="text-sm text-gray-600 mb-3">Özel baharatlarla tatlandırılmış, ketçap ve mayonez eşliğinde.</p>
@@ -349,9 +385,9 @@
 
         <section id="deniz-mahsulleri" class="py-12 md:py-16 animate-on-scroll">
             <h2 class="section-title text-3xl sm:text-4xl font-playfair font-bold text-center text-slate-700 mb-10 sm:mb-12">Deniz Mahsulleri</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                 <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/77B5FE/FFFFFF?text=Levrek+Izgara" alt="[Image of Grilled Sea Bass]" class="w-full h-56 object-cover">
+                    <img src="https://placehold.co/600x400/77B5FE/FFFFFF?text=Levrek+%C4%B0zgara" alt="[Izgara Levrek Resmi]" class="w-full h-56 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl sm:text-2xl font-semibold font-playfair text-slate-700 mb-2">Izgara Levrek</h3>
                         <p class="text-sm text-gray-600 mb-3">Günlük taze, Akdeniz yeşillikleri, patates tava ve limon dilimleriyle servis edilir.</p>
@@ -359,7 +395,7 @@
                     </div>
                 </div>
                 <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/5A90E3/FFFFFF?text=Ahtapot+Izgara" alt="[Image of Grilled Octopus]" class="w-full h-56 object-cover">
+                    <img src="https://placehold.co/600x400/5A90E3/FFFFFF?text=Ahtapot+%C4%B0zgara" alt="[Izgara Ahtapot Resmi]" class="w-full h-56 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl sm:text-2xl font-semibold font-playfair text-slate-700 mb-2">Ahtapot Izgara</h3>
                         <p class="text-sm text-gray-600 mb-3">Özel marine edilmiş, közlenmiş biber, roka ve cherry domates ile.</p>
@@ -367,7 +403,7 @@
                     </div>
                 </div>
                 <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/3C6CB0/FFFFFF?text=Karides+Güveç" alt="[Image of Shrimp Casserole]" class="w-full h-56 object-cover">
+                    <img src="https://placehold.co/600x400/3C6CB0/FFFFFF?text=Karides+G%C3%BCve%C3%A7" alt="[Karides Güveç Resmi]" class="w-full h-56 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl sm:text-2xl font-semibold font-playfair text-slate-700 mb-2">Tereyağlı Karides Güveç</h3>
                         <p class="text-sm text-gray-600 mb-3">Sarımsak, pul biber, taze otlar ve kaşar peyniriyle lezzetlendirilmiş, güveçte.</p>
@@ -375,7 +411,7 @@
                     </div>
                 </div>
                 <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/87CEEB/FFFFFF?text=Somon+Izgara" alt="[Image of Grilled Salmon]" class="w-full h-56 object-cover">
+                    <img src="https://placehold.co/600x400/87CEEB/FFFFFF?text=Somon+%C4%B0zgara" alt="[Izgara Somon Resmi]" class="w-full h-56 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl sm:text-2xl font-semibold font-playfair text-slate-700 mb-2">Izgara Somon</h3>
                         <p class="text-sm text-gray-600 mb-3">Omega-3 deposu somon, buharda sebzeler ve dereotlu sos ile.</p>
@@ -387,9 +423,9 @@
 
         <section id="izgaralar" class="py-12 md:py-16 bg-sky-50 rounded-xl my-10 p-6 md:p-10 animate-on-scroll">
             <h2 class="section-title text-3xl sm:text-4xl font-playfair font-bold text-center text-slate-700 mb-10 sm:mb-12">Izgaralar</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                 <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/D2B48C/333333?text=Kuzu+Pirzola" alt="[Image of Lamb Chops]" class="w-full h-56 object-cover">
+                    <img src="https://placehold.co/600x400/D2B48C/333333?text=Kuzu+Pirzola" alt="[Kuzu Pirzola Resmi]" class="w-full h-56 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl sm:text-2xl font-semibold font-playfair text-slate-700 mb-2">Kuzu Pirzola</h3>
                         <p class="text-sm text-gray-600 mb-3">Kekik ve baharatlarla marine edilmiş, közlenmiş domates, biber ve bulgur pilavı eşliğinde.</p>
@@ -397,7 +433,7 @@
                     </div>
                 </div>
                 <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/CD853F/FFFFFF?text=Adana+Kebap" alt="[Image of Adana Kebab]" class="w-full h-56 object-cover">
+                    <img src="https://placehold.co/600x400/CD853F/FFFFFF?text=Adana+Kebap" alt="[Adana Kebap Resmi]" class="w-full h-56 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl sm:text-2xl font-semibold font-playfair text-slate-700 mb-2">Adana Kebap</h3>
                         <p class="text-sm text-gray-600 mb-3">Acılı, zırhta çekilmiş kuzu etinden, yanında bulgur pilavı, sumaklı soğan ve lavaş.</p>
@@ -405,7 +441,7 @@
                     </div>
                 </div>
                 <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/B87333/FFFFFF?text=Tavuk+Şiş" alt="[Image of Chicken Shish]" class="w-full h-56 object-cover">
+                    <img src="https://placehold.co/600x400/B87333/FFFFFF?text=Tavuk+%C5%9Ei%C5%9F" alt="[Tavuk Şiş Resmi]" class="w-full h-56 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl sm:text-2xl font-semibold font-playfair text-slate-700 mb-2">Tavuk Şiş</h3>
                         <p class="text-sm text-gray-600 mb-3">Özel terbiyeli tavuk parçaları, pilav, mevsim salatası ve közlenmiş sebzeler ile.</p>
@@ -413,7 +449,7 @@
                     </div>
                 </div>
                 <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/A52A2A/FFFFFF?text=Köfte" alt="[Image of Meatballs]" class="w-full h-56 object-cover">
+                    <img src="https://placehold.co/600x400/A52A2A/FFFFFF?text=K%C3%B6fte" alt="[Köfte Resmi]" class="w-full h-56 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl sm:text-2xl font-semibold font-playfair text-slate-700 mb-2">Kasap Köfte</h3>
                         <p class="text-sm text-gray-600 mb-3">Dana kıymadan hazırlanmış, patates kızartması ve piyaz eşliğinde.</p>
@@ -425,9 +461,9 @@
 
         <section id="salatalar" class="py-12 md:py-16 animate-on-scroll">
             <h2 class="section-title text-3xl sm:text-4xl font-playfair font-bold text-center text-slate-700 mb-10 sm:mb-12">Salatalar</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                 <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/90EE90/333333?text=Mevsim+Salata" alt="[Image of Seasonal Salad]" class="w-full h-56 object-cover">
+                    <img src="https://placehold.co/600x400/90EE90/333333?text=Mevsim+Salata" alt="[Mevsim Salata Resmi]" class="w-full h-56 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl sm:text-2xl font-semibold font-playfair text-slate-700 mb-2">Mevsim Salata</h3>
                         <p class="text-sm text-gray-600 mb-3">Taptaze mevsim yeşillikleri, domates, salatalık, havuç, mısır, zeytinyağı ve limon sosu ile.</p>
@@ -435,7 +471,7 @@
                     </div>
                 </div>
                 <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/98FB98/333333?text=Gavurdağı+Salata" alt="[Image of Gavurdagi Salad]" class="w-full h-56 object-cover">
+                    <img src="https://placehold.co/600x400/98FB98/333333?text=Gavurda%C4%9F%C4%B1+Salata" alt="[Gavurdağı Salata Resmi]" class="w-full h-56 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl sm:text-2xl font-semibold font-playfair text-slate-700 mb-2">Gavurdağı Salatası</h3>
                         <p class="text-sm text-gray-600 mb-3">İnce kıyılmış domates, salatalık, biber, soğan, ceviz ve nar ekşili özel sos.</p>
@@ -443,7 +479,7 @@
                     </div>
                 </div>
                 <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/9ACD32/333333?text=Roka+Salatası" alt="[Image of Arugula Salad]" class="w-full h-56 object-cover">
+                    <img src="https://placehold.co/600x400/9ACD32/333333?text=Roka+Salatas%C4%B1" alt="[Roka Salatası Resmi]" class="w-full h-56 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl sm:text-2xl font-semibold font-playfair text-slate-700 mb-2">Roka Salatası Parmesanlı</h3>
                         <p class="text-sm text-gray-600 mb-3">Taze roka yaprakları, çeri domates, rendelenmiş parmesan peyniri ve balzamik sirke.</p>
@@ -451,7 +487,7 @@
                     </div>
                 </div>
                 <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/6B8E23/333333?text=Tavuklu+Salata" alt="[Image of Chicken Salad]" class="w-full h-56 object-cover">
+                    <img src="https://placehold.co/600x400/6B8E23/333333?text=Tavuklu+Salata" alt="[Tavuklu Salata Resmi]" class="w-full h-56 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl sm:text-2xl font-semibold font-playfair text-slate-700 mb-2">Izgara Tavuklu Salata</h3>
                         <p class="text-sm text-gray-600 mb-3">Akdeniz yeşillikleri, ızgara tavuk dilimleri, mısır, kruton ve özel sos.</p>
@@ -463,9 +499,9 @@
 
         <section id="tatlilar" class="py-12 md:py-16 bg-sky-50 rounded-xl my-10 p-6 md:p-10 animate-on-scroll">
             <h2 class="section-title text-3xl sm:text-4xl font-playfair font-bold text-center text-slate-700 mb-10 sm:mb-12">Tatlılar</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                 <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/FFB6C1/333333?text=İrmik+Helvası" alt="[Image of Semolina Halva with Ice Cream]" class="w-full h-56 object-cover">
+                    <img src="https://placehold.co/600x400/FFB6C1/333333?text=%C4%B0rmik+Helvas%C4%B1" alt="[Dondurmalı İrmik Helvası Resmi]" class="w-full h-56 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl sm:text-2xl font-semibold font-playfair text-slate-700 mb-2">Dondurmalı İrmik Helvası</h3>
                         <p class="text-sm text-gray-600 mb-3">Sıcak irmik helvası üzerinde bir top Maraş dondurması ile, tarçın eşliğinde.</p>
@@ -473,7 +509,7 @@
                     </div>
                 </div>
                 <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/FFDAB9/333333?text=Sütlaç" alt="[Image of Rice Pudding]" class="w-full h-56 object-cover">
+                    <img src="https://placehold.co/600x400/FFDAB9/333333?text=S%C3%BCtla%C3%A7" alt="[Sütlaç Resmi]" class="w-full h-56 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl sm:text-2xl font-semibold font-playfair text-slate-700 mb-2">Fırın Sütlaç</h3>
                         <p class="text-sm text-gray-600 mb-3">Geleneksel yöntemlerle hazırlanmış, üzeri nar gibi kızarmış, fındık serpilmiş.</p>
@@ -481,7 +517,7 @@
                     </div>
                 </div>
                 <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/FFE4E1/333333?text=Meyve+Tabağı" alt="[Image of Seasonal Fruit Platter]" class="w-full h-56 object-cover">
+                    <img src="https://placehold.co/600x400/FFE4E1/333333?text=Meyve+Taba%C4%9F%C4%B1" alt="[Mevsim Meyveleri Tabağı Resmi]" class="w-full h-56 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl sm:text-2xl font-semibold font-playfair text-slate-700 mb-2">Mevsim Meyveleri Tabağı</h3>
                         <p class="text-sm text-gray-600 mb-3">En taze ve çeşitli mevsim meyveleri, hafif bal sosu ile.</p>
@@ -493,9 +529,9 @@
 
         <section id="icecekler" class="py-12 md:py-16 animate-on-scroll">
             <h2 class="section-title text-3xl sm:text-4xl font-playfair font-bold text-center text-slate-700 mb-10 sm:mb-12">İçecekler</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                 <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/ADD8E6/333333?text=Türk+Kahvesi" alt="[Image of Turkish Coffee]" class="w-full h-56 object-cover">
+                    <img src="https://placehold.co/600x400/ADD8E6/333333?text=T%C3%BCrk+Kahvesi" alt="[Türk Kahvesi Resmi]" class="w-full h-56 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl sm:text-2xl font-semibold font-playfair text-slate-700 mb-2">Türk Kahvesi</h3>
                         <p class="text-sm text-gray-600 mb-3">Bol köpüklü, yanında lokum ile servis edilir.</p>
@@ -503,7 +539,7 @@
                     </div>
                 </div>
                 <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/B0E0E6/333333?text=Limonata" alt="[Image of Lemonade]" class="w-full h-56 object-cover">
+                    <img src="https://placehold.co/600x400/B0E0E6/333333?text=Limonata" alt="[Limonata Resmi]" class="w-full h-56 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl sm:text-2xl font-semibold font-playfair text-slate-700 mb-2">Ev Yapımı Limonata</h3>
                         <p class="text-sm text-gray-600 mb-3">Taze sıkılmış limonlardan, nane ferahlığıyla, buz gibi.</p>
@@ -511,7 +547,7 @@
                     </div>
                 </div>
                 <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/AFEEEE/333333?text=Çay" alt="[Image of Tea]" class="w-full h-56 object-cover">
+                    <img src="https://placehold.co/600x400/AFEEEE/333333?text=%C3%87ay" alt="[Çay Resmi]" class="w-full h-56 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl sm:text-2xl font-semibold font-playfair text-slate-700 mb-2">Demleme Çay</h3>
                         <p class="text-sm text-gray-600 mb-3">İnce belli bardakta, tavşan kanı, günün her saati.</p>
@@ -519,7 +555,7 @@
                     </div>
                 </div>
                 <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/87CEFA/333333?text=Soğuk+Kahve" alt="[Image of Iced Coffee]" class="w-full h-56 object-cover">
+                    <img src="https://placehold.co/600x400/87CEFA/333333?text=So%C4%9Fuk+Kahve" alt="[Soğuk Kahve Resmi]" class="w-full h-56 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl sm:text-2xl font-semibold font-playfair text-slate-700 mb-2">Soğuk Kahve Çeşitleri</h3>
                         <p class="text-sm text-gray-600 mb-3">Latte, Mocha, Americano ve daha fazlası, buzlu ve ferahlatıcı.</p>
@@ -553,7 +589,7 @@
                 </div>
                 <div class="w-full h-64 md:h-full rounded-xl overflow-hidden shadow-xl">
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3080.334469795648!2d27.0091398153928!3d39.5937929794715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b986b6a0b9a89d%3A0x6b8a8b8a8b8a8b8a!2sAk%C3%A7ay%20Sahili!5e0!3m2!1str!2str!4v1678912345678!5m2!1str!2str"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3065.750730419163!2d27.00977251538965!3d39.58434787947154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b8a2a0b1b1b1b1%3A0x1b1b1b1b1b1b1b1b!2sAk%C3%A7ay%20Sahili!5e0!3m2!1str!2str!4v1678901234567!5m2!1str!2str"
                         width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                 </div>
