@@ -221,7 +221,7 @@
 
     <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/50 z-30 hidden"></div>
 
-    <div id="mobile-menu" class="md:hidden fixed inset-y-0 left-0 bg-white z-40 w-3/4 menu-closed p-6 space-y-4 flex flex-col shadow-lg">
+    <div id="mobile-menu" class="md:hidden fixed inset-y-0 left-0 bg-white z-40 w-full menu-closed p-6 space-y-4 flex flex-col shadow-lg">
         <div class="flex justify-between items-center mb-8">
             <span class="text-2xl font-playfair font-bold text-blue-600">Mazi Cafe Menü</span>
             <button id="close-mobile-menu-button" class="text-gray-600 hover:text-blue-600">
@@ -639,6 +639,7 @@
                         mobileMenu.classList.remove('menu-open');
                         mobileMenu.classList.add('menu-closed');
                         mobileMenuOverlay.classList.add('hidden'); // Hide overlay
+                        document.body.style.overflow = ''; // Allow scrolling
                     }
                 }
             });
@@ -654,12 +655,14 @@
             mobileMenu.classList.remove('menu-closed');
             mobileMenu.classList.add('menu-open');
             mobileMenuOverlay.classList.remove('hidden'); // Show overlay
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
         });
 
         closeMobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.remove('menu-open');
             mobileMenu.classList.add('menu-closed');
             mobileMenuOverlay.classList.add('hidden'); // Hide overlay
+            document.body.style.overflow = ''; // Allow scrolling
         });
 
         // Close mobile menu and hide overlay when clicking outside the menu (on the overlay)
@@ -667,6 +670,7 @@
             mobileMenu.classList.remove('menu-open');
             mobileMenu.classList.add('menu-closed');
             mobileMenuOverlay.classList.add('hidden');
+            document.body.style.overflow = ''; // Allow scrolling
         });
 
         // Set current year in footer
