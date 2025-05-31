@@ -95,7 +95,7 @@
         }
 
         .menu-closed {
-            transform: translateX(100%); /* Changed to slide from right for better UX */
+            transform: translateX(-100%); /* Changed to slide from left */
         }
 
         /* Back to top button styling */
@@ -217,7 +217,7 @@
                 </div>
             </div>
         </div>
-        <div id="mobile-menu" class="md:hidden fixed inset-y-0 right-0 bg-white/95 backdrop-blur-md z-40 w-3/4 menu-closed p-6 space-y-4 flex flex-col shadow-lg">
+        <div id="mobile-menu" class="md:hidden fixed inset-y-0 left-0 bg-white z-40 w-3/4 menu-closed p-6 space-y-4 flex flex-col shadow-lg">
             <div class="flex justify-between items-center mb-8">
                 <span class="text-2xl font-playfair font-bold text-blue-600">Mazi Cafe Menü</span>
                 <button id="close-mobile-menu-button" class="text-gray-600 hover:text-blue-600">
