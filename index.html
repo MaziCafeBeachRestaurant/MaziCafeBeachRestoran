@@ -217,47 +217,50 @@
                 </div>
             </div>
         </div>
-        <div id="mobile-menu" class="md:hidden fixed inset-y-0 left-0 bg-white z-40 w-3/4 menu-closed p-6 space-y-4 flex flex-col shadow-lg">
-            <div class="flex justify-between items-center mb-8">
-                <span class="text-2xl font-playfair font-bold text-blue-600">Mazi Cafe Menü</span>
-                <button id="close-mobile-menu-button" class="text-gray-600 hover:text-blue-600">
-                    <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
-            <a href="#hosgeldiniz" class="block text-gray-700 hover:text-blue-600 py-3 text-lg mobile-nav-link flex items-center rounded-md px-2">
-                <i class="fas fa-home mr-3 text-blue-500"></i> Hoş Geldiniz
-            </a>
-            <a href="#hakkimizda" class="block text-gray-700 hover:text-blue-600 py-3 text-lg mobile-nav-link flex items-center rounded-md px-2">
-                <i class="fas fa-info-circle mr-3 text-blue-500"></i> Hakkımızda
-            </a>
-            <a href="#kahvaltilar" class="block text-gray-700 hover:text-blue-600 py-3 text-lg mobile-nav-link flex items-center rounded-md px-2">
-                <i class="fas fa-egg mr-3 text-blue-500"></i> Kahvaltılar
-            </a>
-            <a href="#baslangiclar" class="block text-gray-700 hover:text-blue-600 py-3 text-lg mobile-nav-link flex items-center rounded-md px-2">
-                <i class="fas fa-utensils mr-3 text-blue-500"></i> Başlangıçlar
-            </a>
-            <a href="#deniz-mahsulleri" class="block text-gray-700 hover:text-blue-600 py-3 text-lg mobile-nav-link flex items-center rounded-md px-2">
-                <i class="fas fa-fish mr-3 text-blue-500"></i> Deniz Mahsulleri
-            </a>
-            <a href="#izgaralar" class="block text-gray-700 hover:text-blue-600 py-3 text-lg mobile-nav-link flex items-center rounded-md px-2">
-                <i class="fas fa-fire-alt mr-3 text-blue-500"></i> Izgaralar
-            </a>
-            <a href="#salatalar" class="block text-gray-700 hover:text-blue-600 py-3 text-lg mobile-nav-link flex items-center rounded-md px-2">
-                <i class="fas fa-leaf mr-3 text-blue-500"></i> Salatalar
-            </a>
-            <a href="#tatlilar" class="block text-gray-700 hover:text-blue-600 py-3 text-lg mobile-nav-link flex items-center rounded-md px-2">
-                <i class="fas fa-ice-cream mr-3 text-blue-500"></i> Tatlılar
-            </a>
-            <a href="#icecekler" class="block text-gray-700 hover:text-blue-600 py-3 text-lg mobile-nav-link flex items-center rounded-md px-2">
-                <i class="fas fa-cocktail mr-3 text-blue-500"></i> İçecekler
-            </a>
-            <a href="#iletisim" class="block text-gray-700 hover:text-blue-600 py-3 text-lg mobile-nav-link flex items-center rounded-md px-2">
-                <i class="fas fa-map-marker-alt mr-3 text-blue-500"></i> İletişim
-            </a>
-        </div>
     </header>
+
+    <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/50 z-30 hidden"></div>
+
+    <div id="mobile-menu" class="md:hidden fixed inset-y-0 left-0 bg-white z-40 w-3/4 menu-closed p-6 space-y-4 flex flex-col shadow-lg">
+        <div class="flex justify-between items-center mb-8">
+            <span class="text-2xl font-playfair font-bold text-blue-600">Mazi Cafe Menü</span>
+            <button id="close-mobile-menu-button" class="text-gray-600 hover:text-blue-600">
+                <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <a href="#hosgeldiniz" class="block text-gray-700 hover:text-blue-600 py-3 text-lg mobile-nav-link flex items-center rounded-md px-2">
+            <i class="fas fa-home mr-3 text-blue-500"></i> Hoş Geldiniz
+        </a>
+        <a href="#hakkimizda" class="block text-gray-700 hover:text-blue-600 py-3 text-lg mobile-nav-link flex items-center rounded-md px-2">
+            <i class="fas fa-info-circle mr-3 text-blue-500"></i> Hakkımızda
+        </a>
+        <a href="#kahvaltilar" class="block text-gray-700 hover:text-blue-600 py-3 text-lg mobile-nav-link flex items-center rounded-md px-2">
+            <i class="fas fa-egg mr-3 text-blue-500"></i> Kahvaltılar
+        </a>
+        <a href="#baslangiclar" class="block text-gray-700 hover:text-blue-600 py-3 text-lg mobile-nav-link flex items-center rounded-md px-2">
+            <i class="fas fa-utensils mr-3 text-blue-500"></i> Başlangıçlar
+        </a>
+        <a href="#deniz-mahsulleri" class="block text-gray-700 hover:text-blue-600 py-3 text-lg mobile-nav-link flex items-center rounded-md px-2">
+            <i class="fas fa-fish mr-3 text-blue-500"></i> Deniz Mahsulleri
+        </a>
+        <a href="#izgaralar" class="block text-gray-700 hover:text-blue-600 py-3 text-lg mobile-nav-link flex items-center rounded-md px-2">
+            <i class="fas fa-fire-alt mr-3 text-blue-500"></i> Izgaralar
+        </a>
+        <a href="#salatalar" class="block text-gray-700 hover:text-blue-600 py-3 text-lg mobile-nav-link flex items-center rounded-md px-2">
+            <i class="fas fa-leaf mr-3 text-blue-500"></i> Salatalar
+        </a>
+        <a href="#tatlilar" class="block text-gray-700 hover:text-blue-600 py-3 text-lg mobile-nav-link flex items-center rounded-md px-2">
+            <i class="fas fa-ice-cream mr-3 text-blue-500"></i> Tatlılar
+        </a>
+        <a href="#icecekler" class="block text-gray-700 hover:text-blue-600 py-3 text-lg mobile-nav-link flex items-center rounded-md px-2">
+            <i class="fas fa-cocktail mr-3 text-blue-500"></i> İçecekler
+        </a>
+        <a href="#iletisim" class="block text-gray-700 hover:text-blue-600 py-3 text-lg mobile-nav-link flex items-center rounded-md px-2">
+            <i class="fas fa-map-marker-alt mr-3 text-blue-500"></i> İletişim
+        </a>
+    </div>
 
     <section id="hosgeldiniz" class="hero-section min-h-[70vh] md:h-[calc(100vh-5rem)] flex items-center justify-center text-white relative">
         <div class="absolute inset-0 bg-black/50"></div>
@@ -631,9 +634,11 @@
 
                     // Close mobile menu if open and link is clicked
                     const mobileMenu = document.getElementById('mobile-menu');
+                    const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
                     if (mobileMenu.classList.contains('menu-open')) {
                         mobileMenu.classList.remove('menu-open');
                         mobileMenu.classList.add('menu-closed');
+                        mobileMenuOverlay.classList.add('hidden'); // Hide overlay
                     }
                 }
             });
@@ -643,15 +648,25 @@
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const closeMobileMenuButton = document.getElementById('close-mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay'); // Get the overlay element
 
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.remove('menu-closed');
             mobileMenu.classList.add('menu-open');
+            mobileMenuOverlay.classList.remove('hidden'); // Show overlay
         });
 
         closeMobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.remove('menu-open');
             mobileMenu.classList.add('menu-closed');
+            mobileMenuOverlay.classList.add('hidden'); // Hide overlay
+        });
+
+        // Close mobile menu and hide overlay when clicking outside the menu (on the overlay)
+        mobileMenuOverlay.addEventListener('click', () => {
+            mobileMenu.classList.remove('menu-open');
+            mobileMenu.classList.add('menu-closed');
+            mobileMenuOverlay.classList.add('hidden');
         });
 
         // Set current year in footer
