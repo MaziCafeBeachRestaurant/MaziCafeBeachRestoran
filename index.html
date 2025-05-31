@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mazi Cafe Beach Restaurant - Menü</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth; /* Enables smooth scrolling for the whole page */
+        }
+        .hero-section {
+            background-image: url('https://placehold.co/1920x1080/87CEFA/FFFFFF?text=Mazi+Cafe+Beach+Restaurant'); /* Light sky blue background */
+            background-size: cover;
+            background-position: center;
+        }
+        .menu-item-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .menu-item-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        nav a {
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #007BFF; /* Tailwind's blue-500 or a custom beachy blue */
+        }
+        /* Custom scrollbar for a more refined look (optional) */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        .section-title {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0.5rem; /* Space for the underline */
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px; /* Width of the underline */
+            height: 3px; /* Thickness of the underline */
+            background-color: #3b82f6; /* Tailwind blue-500 */
+        }
+
+        /* Mobile navigation */
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+        }
+        .menu-open {
+            transform: translateX(0%);
+        }
+        .menu-closed {
+            transform: translateX(-100%);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-sky-50 to-blue-100 text-gray-800">
+
+    <header class="bg-white/90 backdrop-blur-md shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-3xl font-playfair font-bold text-blue-600">Mazi Cafe</a>
+                </div>
+                <nav class="hidden md:flex space-x-6 lg:space-x-8">
+                    <a href="#hosgeldiniz" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-md font-medium">Hoş Geldiniz</a>
+                    <a href="#baslangiclar" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-md font-medium">Başlangıçlar</a>
+                    <a href="#deniz-mahsulleri" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-md font-medium">Deniz Mahsulleri</a>
+                    <a href="#izgaralar" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-md font-medium">Izgaralar</a>
+                    <a href="#salatalar" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-md font-medium">Salatalar</a>
+                    <a href="#tatlilar" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-md font-medium">Tatlılar</a>
+                    <a href="#icecekler" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-md font-medium">İçecekler</a>
+                </nav>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-blue-600 focus:outline-none focus:text-blue-600">
+                        <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden fixed inset-0 bg-white/95 backdrop-blur-md z-40 menu-closed p-6 space-y-4">
+            <div class="flex justify-between items-center mb-8">
+                <span class="text-2xl font-playfair font-bold text-blue-600">Mazi Cafe Menü</span>
+                <button id="close-mobile-menu-button" class="text-gray-600 hover:text-blue-600">
+                     <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <a href="#hosgeldiniz" class="block text-gray-700 hover:text-blue-600 py-2 text-lg mobile-nav-link">Hoş Geldiniz</a>
+            <a href="#baslangiclar" class="block text-gray-700 hover:text-blue-600 py-2 text-lg mobile-nav-link">Başlangıçlar</a>
+            <a href="#deniz-mahsulleri" class="block text-gray-700 hover:text-blue-600 py-2 text-lg mobile-nav-link">Deniz Mahsulleri</a>
+            <a href="#izgaralar" class="block text-gray-700 hover:text-blue-600 py-2 text-lg mobile-nav-link">Izgaralar</a>
+            <a href="#salatalar" class="block text-gray-700 hover:text-blue-600 py-2 text-lg mobile-nav-link">Salatalar</a>
+            <a href="#tatlilar" class="block text-gray-700 hover:text-blue-600 py-2 text-lg mobile-nav-link">Tatlılar</a>
+            <a href="#icecekler" class="block text-gray-700 hover:text-blue-600 py-2 text-lg mobile-nav-link">İçecekler</a>
+        </div>
+    </header>
+
+    <section id="hosgeldiniz" class="hero-section h-[calc(100vh-5rem)] flex items-center justify-center text-white relative">
+        <div class="absolute inset-0 bg-black/40"></div> <div class="text-center z-10 p-6">
+            <h1 class="text-5xl md:text-7xl font-playfair font-bold mb-6 drop-shadow-lg">Mazi Cafe Beach Restaurant</h1>
+            <p class="text-xl md:text-2xl mb-8 font-light drop-shadow-md">Denizin ve lezzetin buluşma noktası. Eşsiz tatlar, unutulmaz anlar...</p>
+            <a href="#baslangiclar" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg text-lg shadow-lg transition duration-300 transform hover:scale-105">Menümüzü Keşfedin</a>
+        </div>
+    </section>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+
+        <section id="baslangiclar" class="py-12 md:py-16">
+            <h2 class="section-title text-4xl font-playfair font-bold text-center text-slate-700 mb-12">Başlangıçlar</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://placehold.co/600x400/A0D2DB/333333?text=Meze+Tabağı" alt="Meze Tabağı" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold font-playfair text-slate-700 mb-2">Serpme Meze Tabağı</h3>
+                        <p class="text-gray-600 mb-3 text-sm">Günlük hazırlanan, Ege'nin taptaze mezelerinden oluşan zengin bir seçki.</p>
+                        <p class="text-xl font-semibold text-blue-600">180 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://placehold.co/600x400/FAD02E/333333?text=Kalamar+Tava" alt="Kalamar Tava" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold font-playfair text-slate-700 mb-2">Çıtır Kalamar Tava</h3>
+                        <p class="text-gray-600 mb-3 text-sm">Özel sosuyla marine edilmiş, altın renginde kızartılmış taze kalamar.</p>
+                        <p class="text-xl font-semibold text-blue-600">220 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://placehold.co/600x400/E0E0E0/333333?text=Sigara+Böreği" alt="Sigara Böreği" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold font-playfair text-slate-700 mb-2">Ev Yapımı Sigara Böreği</h3>
+                        <p class="text-gray-600 mb-3 text-sm">İncecik yufkadan, peynirli iç harcıyla hazırlanmış, çıtır çıtır.</p>
+                        <p class="text-xl font-semibold text-blue-600">120 TL</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="deniz-mahsulleri" class="py-12 md:py-16 bg-sky-50 rounded-xl my-10 p-6 md:p-10">
+            <h2 class="section-title text-4xl font-playfair font-bold text-center text-slate-700 mb-12">Deniz Mahsulleri</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://placehold.co/600x400/77B5FE/FFFFFF?text=Levrek+Izgara" alt="Levrek Izgara" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold font-playfair text-slate-700 mb-2">Izgara Levrek</h3>
+                        <p class="text-gray-600 mb-3 text-sm">Günlük taze, Akdeniz yeşillikleri ve limon dilimleriyle servis edilir.</p>
+                        <p class="text-xl font-semibold text-blue-600">350 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://placehold.co/600x400/5A90E3/FFFFFF?text=Ahtapot+Izgara" alt="Ahtapot Izgara" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold font-playfair text-slate-700 mb-2">Ahtapot Izgara</h3>
+                        <p class="text-gray-600 mb-3 text-sm">Özel marine edilmiş, közlenmiş biber ve roka ile.</p>
+                        <p class="text-xl font-semibold text-blue-600">420 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://placehold.co/600x400/3C6CB0/FFFFFF?text=Karides+Güveç" alt="Karides Güveç" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold font-playfair text-slate-700 mb-2">Tereyağlı Karides Güveç</h3>
+                        <p class="text-gray-600 mb-3 text-sm">Sarımsak, pul biber ve taze otlarla lezzetlendirilmiş, güveçte.</p>
+                        <p class="text-xl font-semibold text-blue-600">380 TL</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="izgaralar" class="py-12 md:py-16">
+            <h2 class="section-title text-4xl font-playfair font-bold text-center text-slate-700 mb-12">Izgaralar</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://placehold.co/600x400/D2B48C/333333?text=Kuzu+Pirzola" alt="Kuzu Pirzola" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold font-playfair text-slate-700 mb-2">Kuzu Pirzola</h3>
+                        <p class="text-gray-600 mb-3 text-sm">Kekik ve baharatlarla marine edilmiş, közlenmiş domates ve biber eşliğinde.</p>
+                        <p class="text-xl font-semibold text-blue-600">400 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://placehold.co/600x400/CD853F/FFFFFF?text=Adana+Kebap" alt="Adana Kebap" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold font-playfair text-slate-700 mb-2">Adana Kebap</h3>
+                        <p class="text-gray-600 mb-3 text-sm">Acılı, zırhta çekilmiş kuzu etinden, yanında bulgur pilavı ve sumaklı soğan.</p>
+                        <p class="text-xl font-semibold text-blue-600">320 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://placehold.co/600x400/B87333/FFFFFF?text=Tavuk+Şiş" alt="Tavuk Şiş" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold font-playfair text-slate-700 mb-2">Tavuk Şiş</h3>
+                        <p class="text-gray-600 mb-3 text-sm">Özel terbiyeli tavuk parçaları, pilav ve mevsim salatası ile.</p>
+                        <p class="text-xl font-semibold text-blue-600">280 TL</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="salatalar" class="py-12 md:py-16 bg-sky-50 rounded-xl my-10 p-6 md:p-10">
+            <h2 class="section-title text-4xl font-playfair font-bold text-center text-slate-700 mb-12">Salatalar</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                 <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://placehold.co/600x400/90EE90/333333?text=Mevsim+Salata" alt="Mevsim Salata" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold font-playfair text-slate-700 mb-2">Mevsim Salata</h3>
+                        <p class="text-gray-600 mb-3 text-sm">Taptaze mevsim yeşillikleri, domates, salatalık, zeytinyağı ve limon sosu ile.</p>
+                        <p class="text-xl font-semibold text-blue-600">100 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://placehold.co/600x400/98FB98/333333?text=Gavurdağı+Salata" alt="Gavurdağı Salata" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold font-playfair text-slate-700 mb-2">Gavurdağı Salatası</h3>
+                        <p class="text-gray-600 mb-3 text-sm">İnce kıyılmış domates, salatalık, biber, soğan, ceviz ve nar ekşili sos.</p>
+                        <p class="text-xl font-semibold text-blue-600">130 TL</p>
+                    </div>
+                </div>
+                 <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://placehold.co/600x400/9ACD32/333333?text=Roka+Salatası" alt="Roka Salatası" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold font-playfair text-slate-700 mb-2">Roka Salatası Parmesanlı</h3>
+                        <p class="text-gray-600 mb-3 text-sm">Taze roka yaprakları, çeri domates, parmesan peyniri ve balzamik sirke.</p>
+                        <p class="text-xl font-semibold text-blue-600">140 TL</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tatlilar" class="py-12 md:py-16">
+            <h2 class="section-title text-4xl font-playfair font-bold text-center text-slate-700 mb-12">Tatlılar</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://placehold.co/600x400/FFB6C1/333333?text=İrmik+Helvası" alt="İrmik Helvası" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold font-playfair text-slate-700 mb-2">Dondurmalı İrmik Helvası</h3>
+                        <p class="text-gray-600 mb-3 text-sm">Sıcak irmik helvası üzerinde bir top Maraş dondurması ile.</p>
+                        <p class="text-xl font-semibold text-blue-600">120 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://placehold.co/600x400/FFDAB9/333333?text=Sütlaç" alt="Sütlaç" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold font-playfair text-slate-700 mb-2">Fırın Sütlaç</h3>
+                        <p class="text-gray-600 mb-3 text-sm">Geleneksel yöntemlerle hazırlanmış, üzeri nar gibi kızarmış.</p>
+                        <p class="text-xl font-semibold text-blue-600">100 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://placehold.co/600x400/FFE4E1/333333?text=Meyve+Tabağı" alt="Meyve Tabağı" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold font-playfair text-slate-700 mb-2">Mevsim Meyveleri Tabağı</h3>
+                        <p class="text-gray-600 mb-3 text-sm">En taze ve çeşitli mevsim meyveleri.</p>
+                        <p class="text-xl font-semibold text-blue-600">150 TL</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="icecekler" class="py-12 md:py-16 bg-sky-50 rounded-xl my-10 p-6 md:p-10">
+            <h2 class="section-title text-4xl font-playfair font-bold text-center text-slate-700 mb-12">İçecekler</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://placehold.co/600x400/ADD8E6/333333?text=Türk+Kahvesi" alt="Türk Kahvesi" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold font-playfair text-slate-700 mb-2">Türk Kahvesi</h3>
+                        <p class="text-gray-600 mb-3 text-sm">Bol köpüklü, yanında lokum ile servis edilir.</p>
+                        <p class="text-xl font-semibold text-blue-600">50 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://placehold.co/600x400/B0E0E6/333333?text=Limonata" alt="Limonata" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold font-playfair text-slate-700 mb-2">Ev Yapımı Limonata</h3>
+                        <p class="text-gray-600 mb-3 text-sm">Taze sıkılmış limonlardan, nane ferahlığıyla.</p>
+                        <p class="text-xl font-semibold text-blue-600">70 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://placehold.co/600x400/AFEEEE/333333?text=Çay" alt="Çay" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold font-playfair text-slate-700 mb-2">Demleme Çay</h3>
+                        <p class="text-gray-600 mb-3 text-sm">İnce belli bardakta, tavşan kanı.</p>
+                        <p class="text-xl font-semibold text-blue-600">30 TL</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-800 text-white py-10 mt-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="font-playfair text-2xl mb-2">Mazi Cafe Beach Restaurant</p>
+            <p class="text-sm text-slate-300">&copy; <span id="currentYear"></span> Mazi Cafe. Tüm hakları saklıdır.</p>
+            <p class="text-sm text-slate-400 mt-1">Akçay Sahili, Balıkesir</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('nav a[href^="#"], a.mobile-nav-link[href^="#"], .hero-section a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Calculate offset for fixed header if necessary
+                    const headerOffset = document.querySelector('header').offsetHeight;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset - 20; // 20px extra padding
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+
+                    // Close mobile menu if open and link is clicked
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (mobileMenu.classList.contains('menu-open')) {
+                        mobileMenu.classList.remove('menu-open');
+                        mobileMenu.classList.add('menu-closed');
+                    }
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const closeMobileMenuButton = document.getElementById('close-mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('menu-closed');
+            mobileMenu.classList.add('menu-open');
+        });
+
+        closeMobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('menu-open');
+            mobileMenu.classList.add('menu-closed');
+        });
+        
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
