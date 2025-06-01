@@ -17,7 +17,7 @@
 
         /* Hero bölümü arka planı */
         .hero-section {
-            background-image: url('https://placehold.co/1920x1080/87CEEB/FFFFFF?text=Akçay+Sahilinde+Gün+Batımı+ve+Mazi+Cafe'); /* Daha çekici bir kapak resmi */
+            background-image: url('https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); /* Gerçek bir yemek/sahil resmi */
             background-size: cover;
             background-position: center;
             background-attachment: fixed; /* Parallax benzeri etki (mobil cihazlarda performansı test edin) */
@@ -31,6 +31,10 @@
         .menu-item-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .menu-item-card .description {
+            min-height: 4rem; /* Açıklama alanı için minimum yükseklik */
         }
 
         /* Başlıklar için Playfair Display fontu */
@@ -79,6 +83,11 @@
             height: 4px; /* Daha kalın alt çizgi */
             background-color: #3b82f6; /* Tailwind blue-500 */
             border-radius: 2px;
+        }
+        
+        /* İletişim bölümündeki başlık için beyaz alt çizgi */
+        #iletisim .section-title::after {
+            background-color: #ffffff;
         }
 
         /* Mobil menü kayma efekti */
@@ -153,12 +162,8 @@
             .menu-item-card .font-semibold.text-blue-600 { /* Fiyat için daha spesifik */
                 font-size: 1rem; /* Mobil için fiyat boyutu */
             }
-            #iletisim .flex-col { /* Bu seçici artık kullanılmıyor, genel grid yapısı var */
-                align-items: center;
-                text-align: center;
-            }
              /* Harita alanı için yükseklik mobil cihazlarda ayarlandı */
-            .map-container { /* .map-container-mobile yerine genel bir sınıf */
+            .map-container { 
                  height: 300px; /* Mobil için harita yüksekliği */
             }
         }
@@ -177,37 +182,17 @@
                 <div class="flex-shrink-0">
                     <a href="#" class="text-3xl md:text-4xl font-playfair font-bold text-blue-600 hover:text-blue-800 transition duration-300">Mazi Cafe</a>
                 </div>
-                <nav class="hidden md:flex space-x-4 lg:space-x-6">
-                    <a href="#hosgeldiniz" class="group flex items-center text-gray-600 hover:text-blue-700 px-3 py-2 rounded-md text-sm lg:text-md font-medium">
-                        <i class="fas fa-home mr-2 text-blue-400 group-hover:text-blue-700"></i> Hoş Geldiniz
-                    </a>
-                    <a href="#hakkimizda" class="group flex items-center text-gray-600 hover:text-blue-700 px-3 py-2 rounded-md text-sm lg:text-md font-medium">
-                        <i class="fas fa-info-circle mr-2 text-blue-400 group-hover:text-blue-700"></i> Hakkımızda
-                    </a>
-                    <a href="#kahvaltilar" class="group flex items-center text-gray-600 hover:text-blue-700 px-3 py-2 rounded-md text-sm lg:text-md font-medium">
-                        <i class="fas fa-egg mr-2 text-blue-400 group-hover:text-blue-700"></i> Kahvaltılar
-                    </a>
-                    <a href="#baslangiclar" class="group flex items-center text-gray-600 hover:text-blue-700 px-3 py-2 rounded-md text-sm lg:text-md font-medium">
-                        <i class="fas fa-utensils mr-2 text-blue-400 group-hover:text-blue-700"></i> Başlangıçlar
-                    </a>
-                    <a href="#deniz-mahsulleri" class="group flex items-center text-gray-600 hover:text-blue-700 px-3 py-2 rounded-md text-sm lg:text-md font-medium">
-                        <i class="fas fa-fish mr-2 text-blue-400 group-hover:text-blue-700"></i> Deniz Mahsulleri
-                    </a>
-                    <a href="#izgaralar" class="group flex items-center text-gray-600 hover:text-blue-700 px-3 py-2 rounded-md text-sm lg:text-md font-medium">
-                        <i class="fas fa-fire-alt mr-2 text-blue-400 group-hover:text-blue-700"></i> Izgaralar
-                    </a>
-                    <a href="#salatalar" class="group flex items-center text-gray-600 hover:text-blue-700 px-3 py-2 rounded-md text-sm lg:text-md font-medium">
-                        <i class="fas fa-leaf mr-2 text-blue-400 group-hover:text-blue-700"></i> Salatalar
-                    </a>
-                    <a href="#tatlilar" class="group flex items-center text-gray-600 hover:text-blue-700 px-3 py-2 rounded-md text-sm lg:text-md font-medium">
-                        <i class="fas fa-ice-cream mr-2 text-blue-400 group-hover:text-blue-700"></i> Tatlılar
-                    </a>
-                    <a href="#icecekler" class="group flex items-center text-gray-600 hover:text-blue-700 px-3 py-2 rounded-md text-sm lg:text-md font-medium">
-                        <i class="fas fa-cocktail mr-2 text-blue-400 group-hover:text-blue-700"></i> İçecekler
-                    </a>
-                    <a href="#iletisim" class="group flex items-center text-gray-600 hover:text-blue-700 px-3 py-2 rounded-md text-sm lg:text-md font-medium">
-                        <i class="fas fa-map-marker-alt mr-2 text-blue-400 group-hover:text-blue-700"></i> İletişim
-                    </a>
+                <nav class="hidden md:flex space-x-1 lg:space-x-2">
+                    <a href="#hosgeldiniz" class="group flex items-center text-gray-600 hover:text-blue-700 px-2 py-2 rounded-md text-xs lg:text-sm font-medium"><i class="fas fa-home mr-1 lg:mr-2 text-blue-400 group-hover:text-blue-700"></i>Hoş Geldiniz</a>
+                    <a href="#hakkimizda" class="group flex items-center text-gray-600 hover:text-blue-700 px-2 py-2 rounded-md text-xs lg:text-sm font-medium"><i class="fas fa-info-circle mr-1 lg:mr-2 text-blue-400 group-hover:text-blue-700"></i>Hakkımızda</a>
+                    <a href="#fastfood" class="group flex items-center text-gray-600 hover:text-blue-700 px-2 py-2 rounded-md text-xs lg:text-sm font-medium"><i class="fas fa-hamburger mr-1 lg:mr-2 text-blue-400 group-hover:text-blue-700"></i>Fast Food</a>
+                    <a href="#mezeler" class="group flex items-center text-gray-600 hover:text-blue-700 px-2 py-2 rounded-md text-xs lg:text-sm font-medium"><i class="fas fa-utensils mr-1 lg:mr-2 text-blue-400 group-hover:text-blue-700"></i>Mezeler</a>
+                    <a href="#arasicaklar" class="group flex items-center text-gray-600 hover:text-blue-700 px-2 py-2 rounded-md text-xs lg:text-sm font-medium"><i class="fas fa-pepper-hot mr-1 lg:mr-2 text-blue-400 group-hover:text-blue-700"></i>Ara Sıcaklar</a>
+                    <a href="#anayemekler" class="group flex items-center text-gray-600 hover:text-blue-700 px-2 py-2 rounded-md text-xs lg:text-sm font-medium"><i class="fas fa-drumstick-bite mr-1 lg:mr-2 text-blue-400 group-hover:text-blue-700"></i>Ana Yemekler</a>
+                    <a href="#salatalar" class="group flex items-center text-gray-600 hover:text-blue-700 px-2 py-2 rounded-md text-xs lg:text-sm font-medium"><i class="fas fa-leaf mr-1 lg:mr-2 text-blue-400 group-hover:text-blue-700"></i>Salatalar</a>
+                    <a href="#icecekler-alkolsuz" class="group flex items-center text-gray-600 hover:text-blue-700 px-2 py-2 rounded-md text-xs lg:text-sm font-medium"><i class="fas fa-mug-hot mr-1 lg:mr-2 text-blue-400 group-hover:text-blue-700"></i>İçecekler</a>
+                    <a href="#alkollu-icecekler" class="group flex items-center text-gray-600 hover:text-blue-700 px-2 py-2 rounded-md text-xs lg:text-sm font-medium"><i class="fas fa-beer mr-1 lg:mr-2 text-blue-400 group-hover:text-blue-700"></i>Alkollü İçecekler</a>
+                    <a href="#iletisim" class="group flex items-center text-gray-600 hover:text-blue-700 px-2 py-2 rounded-md text-xs lg:text-sm font-medium"><i class="fas fa-map-marker-alt mr-1 lg:mr-2 text-blue-400 group-hover:text-blue-700"></i>İletişim</a>
                 </nav>
                 <div class="md:hidden flex items-center">
                     <button id="mobile-menu-button" class="text-gray-600 hover:text-blue-600 focus:outline-none focus:text-blue-600 p-2 rounded-md">
@@ -222,8 +207,8 @@
 
     <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/50 z-30 hidden"></div>
 
-    <div id="mobile-menu" class="md:hidden fixed inset-y-0 left-0 bg-white z-40 w-4/5 max-w-xs menu-closed p-6 space-y-3 flex flex-col shadow-2xl">
-        <div class="flex justify-between items-center mb-6">
+    <div id="mobile-menu" class="md:hidden fixed inset-y-0 left-0 bg-white z-40 w-4/5 max-w-xs menu-closed p-6 space-y-2 flex flex-col shadow-2xl">
+        <div class="flex justify-between items-center mb-4">
             <span class="text-2xl font-playfair font-bold text-blue-600">Mazi Cafe Menü</span>
             <button id="close-mobile-menu-button" class="text-gray-600 hover:text-blue-600 p-2 rounded-md">
                 <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -231,36 +216,16 @@
                 </svg>
             </button>
         </div>
-        <a href="#hosgeldiniz" class="block text-gray-700 hover:bg-blue-50 hover:text-blue-600 py-3 text-md mobile-nav-link flex items-center rounded-md px-4">
-            <i class="fas fa-home mr-3 text-blue-500 w-5 text-center"></i> Hoş Geldiniz
-        </a>
-        <a href="#hakkimizda" class="block text-gray-700 hover:bg-blue-50 hover:text-blue-600 py-3 text-md mobile-nav-link flex items-center rounded-md px-4">
-            <i class="fas fa-info-circle mr-3 text-blue-500 w-5 text-center"></i> Hakkımızda
-        </a>
-        <a href="#kahvaltilar" class="block text-gray-700 hover:bg-blue-50 hover:text-blue-600 py-3 text-md mobile-nav-link flex items-center rounded-md px-4">
-            <i class="fas fa-egg mr-3 text-blue-500 w-5 text-center"></i> Kahvaltılar
-        </a>
-        <a href="#baslangiclar" class="block text-gray-700 hover:bg-blue-50 hover:text-blue-600 py-3 text-md mobile-nav-link flex items-center rounded-md px-4">
-            <i class="fas fa-utensils mr-3 text-blue-500 w-5 text-center"></i> Başlangıçlar
-        </a>
-        <a href="#deniz-mahsulleri" class="block text-gray-700 hover:bg-blue-50 hover:text-blue-600 py-3 text-md mobile-nav-link flex items-center rounded-md px-4">
-            <i class="fas fa-fish mr-3 text-blue-500 w-5 text-center"></i> Deniz Mahsulleri
-        </a>
-        <a href="#izgaralar" class="block text-gray-700 hover:bg-blue-50 hover:text-blue-600 py-3 text-md mobile-nav-link flex items-center rounded-md px-4">
-            <i class="fas fa-fire-alt mr-3 text-blue-500 w-5 text-center"></i> Izgaralar
-        </a>
-        <a href="#salatalar" class="block text-gray-700 hover:bg-blue-50 hover:text-blue-600 py-3 text-md mobile-nav-link flex items-center rounded-md px-4">
-            <i class="fas fa-leaf mr-3 text-blue-500 w-5 text-center"></i> Salatalar
-        </a>
-        <a href="#tatlilar" class="block text-gray-700 hover:bg-blue-50 hover:text-blue-600 py-3 text-md mobile-nav-link flex items-center rounded-md px-4">
-            <i class="fas fa-ice-cream mr-3 text-blue-500 w-5 text-center"></i> Tatlılar
-        </a>
-        <a href="#icecekler" class="block text-gray-700 hover:bg-blue-50 hover:text-blue-600 py-3 text-md mobile-nav-link flex items-center rounded-md px-4">
-            <i class="fas fa-cocktail mr-3 text-blue-500 w-5 text-center"></i> İçecekler
-        </a>
-        <a href="#iletisim" class="block text-gray-700 hover:bg-blue-50 hover:text-blue-600 py-3 text-md mobile-nav-link flex items-center rounded-md px-4">
-            <i class="fas fa-map-marker-alt mr-3 text-blue-500 w-5 text-center"></i> İletişim
-        </a>
+        <a href="#hosgeldiniz" class="block text-gray-700 hover:bg-blue-50 hover:text-blue-600 py-2 text-sm mobile-nav-link flex items-center rounded-md px-3"><i class="fas fa-home mr-3 text-blue-500 w-5 text-center"></i>Hoş Geldiniz</a>
+        <a href="#hakkimizda" class="block text-gray-700 hover:bg-blue-50 hover:text-blue-600 py-2 text-sm mobile-nav-link flex items-center rounded-md px-3"><i class="fas fa-info-circle mr-3 text-blue-500 w-5 text-center"></i>Hakkımızda</a>
+        <a href="#fastfood" class="block text-gray-700 hover:bg-blue-50 hover:text-blue-600 py-2 text-sm mobile-nav-link flex items-center rounded-md px-3"><i class="fas fa-hamburger mr-3 text-blue-500 w-5 text-center"></i>Fast Food</a>
+        <a href="#mezeler" class="block text-gray-700 hover:bg-blue-50 hover:text-blue-600 py-2 text-sm mobile-nav-link flex items-center rounded-md px-3"><i class="fas fa-utensils mr-3 text-blue-500 w-5 text-center"></i>Mezeler</a>
+        <a href="#arasicaklar" class="block text-gray-700 hover:bg-blue-50 hover:text-blue-600 py-2 text-sm mobile-nav-link flex items-center rounded-md px-3"><i class="fas fa-pepper-hot mr-3 text-blue-500 w-5 text-center"></i>Ara Sıcaklar</a>
+        <a href="#anayemekler" class="block text-gray-700 hover:bg-blue-50 hover:text-blue-600 py-2 text-sm mobile-nav-link flex items-center rounded-md px-3"><i class="fas fa-drumstick-bite mr-3 text-blue-500 w-5 text-center"></i>Ana Yemekler</a>
+        <a href="#salatalar" class="block text-gray-700 hover:bg-blue-50 hover:text-blue-600 py-2 text-sm mobile-nav-link flex items-center rounded-md px-3"><i class="fas fa-leaf mr-3 text-blue-500 w-5 text-center"></i>Salatalar</a>
+        <a href="#icecekler-alkolsuz" class="block text-gray-700 hover:bg-blue-50 hover:text-blue-600 py-2 text-sm mobile-nav-link flex items-center rounded-md px-3"><i class="fas fa-mug-hot mr-3 text-blue-500 w-5 text-center"></i>İçecekler</a>
+        <a href="#alkollu-icecekler" class="block text-gray-700 hover:bg-blue-50 hover:text-blue-600 py-2 text-sm mobile-nav-link flex items-center rounded-md px-3"><i class="fas fa-beer mr-3 text-blue-500 w-5 text-center"></i>Alkollü İçecekler</a>
+        <a href="#iletisim" class="block text-gray-700 hover:bg-blue-50 hover:text-blue-600 py-2 text-sm mobile-nav-link flex items-center rounded-md px-3"><i class="fas fa-map-marker-alt mr-3 text-blue-500 w-5 text-center"></i>İletişim</a>
     </div>
 
     <section id="hosgeldiniz" class="hero-section min-h-[60vh] sm:min-h-[70vh] md:h-[calc(100vh-5rem)] flex items-center justify-center text-white relative">
@@ -271,7 +236,7 @@
             <p class="text-md sm:text-lg md:text-2xl mb-6 sm:mb-10 font-light drop-shadow-lg">
                 Denizin ve lezzetin buluşma noktası. Eşsiz tatlar, unutulmaz anlar ve huzurlu bir atmosfer...
             </p>
-            <a href="#baslangiclar" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 sm:py-3 sm:px-8 md:py-4 md:px-10 rounded-full text-md sm:text-lg md:text-xl shadow-xl transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-300">
+            <a href="#fastfood" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 sm:py-3 sm:px-8 md:py-4 md:px-10 rounded-full text-md sm:text-lg md:text-xl shadow-xl transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-300">
                 Menümüzü Keşfedin <i class="fas fa-arrow-down ml-2"></i>
             </a>
         </div>
@@ -283,7 +248,7 @@
             <h2 class="section-title text-3xl sm:text-4xl font-playfair font-bold text-center text-slate-700 mb-8 sm:mb-12">Hakkımızda</h2>
             <div class="flex flex-col md:flex-row items-center gap-6 md:gap-10 bg-white rounded-xl shadow-lg p-6 sm:p-8 md:p-12">
                 <div class="md:w-1/2">
-                    <img src="https://placehold.co/800x600/E6F2F8/333333?text=Mazi+Cafe+Sıcak+Atmosferi" alt="[Mazi Cafe'nin sıcak ve davetkar iç mekanından bir görüntü]" class="rounded-xl shadow-md w-full h-auto object-cover" loading="lazy" onerror="this.src='https://placehold.co/800x600/CCCCCC/FFFFFF?text=Resim+Yüklenemedi'; this.onerror=null;">
+                    <img src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="[Mazi Cafe'nin sıcak ve davetkar iç mekanından bir görüntü]" class="rounded-xl shadow-md w-full h-auto object-cover" loading="lazy" onerror="this.src='https://placehold.co/800x600/CCCCCC/FFFFFF?text=Resim+Yüklenemedi'; this.onerror=null;">
                 </div>
                 <div class="md:w-1/2 text-center md:text-left mt-6 md:mt-0">
                     <h3 class="text-2xl sm:text-3xl font-playfair font-semibold text-slate-700 mb-3 sm:mb-4">Mazi Cafe'ye Hoş Geldiniz!</h3>
@@ -318,145 +283,353 @@
             </div>
         </section>
 
-        <section id="kahvaltilar" class="py-10 md:py-16 animate-on-scroll">
-            <h2 class="section-title text-3xl sm:text-4xl font-playfair font-bold text-center text-slate-700 mb-8 sm:mb-12">Kahvaltılar</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <section id="fastfood" class="py-10 md:py-16 animate-on-scroll">
+            <h2 class="section-title text-3xl sm:text-4xl font-playfair font-bold text-center text-slate-700 mb-8 sm:mb-12">Yiyecekler (Fast Food)</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8">
                 <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/FFF8DC/A52A2A?text=Zengin+Serpme+Kahvaltı" alt="[Zengin içerikli serpme kahvaltı tabağı]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Yüklenemedi'; this.onerror=null;">
+                    <img src="https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Lezzetli bir hamburger]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
                     <div class="p-5 sm:p-6">
-                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Serpme Kahvaltı</h3>
-                        <p class="text-sm text-gray-600 mb-3 h-20 overflow-y-auto">Peynir çeşitleri, zeytin, bal, kaymak, reçel, domates, salatalık, sigara böreği, menemen ve sınırsız çay.</p>
-                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">450 TL</p>
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Hamburger</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Lezzetli ev yapımı köftesiyle.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">300 TL</p>
                     </div>
                 </div>
                 <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/FFDEAD/8B4513?text=Sucuklu+Sahanda+Yumurta" alt="[Sucuklu sahanda yumurta]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Yüklenemedi'; this.onerror=null;">
+                    <img src="https://images.pexels.com/photos/13998515/pexels-photo-13998515.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Bol malzemeli Ayvalık tostu]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
                     <div class="p-5 sm:p-6">
-                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Sahanda Yumurta</h3>
-                        <p class="text-sm text-gray-600 mb-3 h-20 overflow-y-auto">Tereyağında pişirilmiş, isteğe göre sucuklu veya peynirli.</p>
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Ayvalık Tostu</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Bol malzemeli, doyurucu.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">300 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/6604957/pexels-photo-6604957.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Erimiş kaşarlı tost dilimleri]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Kaşarlı Tost</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Klasik ve lezzetli.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">200 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/1893555/pexels-photo-1893555.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Kaşar ve sucuklu karışık tost]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Karışık Tost</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Kaşar ve sucuk bir arada.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">250 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/1029038/pexels-photo-1029038.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Çeşitli atıştırmalıklarla dolu bira tabağı]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Bira Tabağı</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Çeşitli atıştırmalıklarla.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">300 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/1059938/pexels-photo-1059938.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Tavuk şnitzel, patates ve salata tabağı]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Şnitzel Tabağı</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Çıtır tavuk şnitzel, patates ve salata ile.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">300 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/60616/fried-chicken-chicken-fried-crunchy-60616.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Sepette çıtır tavuk parçaları]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Çıtır Tavuk</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Özel sosuyla parmak tavuklar.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">300 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/105994/pexels-photo-105994.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Taze yeşillikli ton balıklı salata]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Tonbalıklı Salata</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Hafif ve doyurucu bir öğün.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">250 TL</p>
+                    </div>
+                </div>
+                 <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Kremalı mantar soslu Fettuccine Alfredo]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Fettuccine Alfredo</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Kremalı mantar sosu ile.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">350 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/1437267/pexels-photo-1437267.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Domates soslu Penne Arrabiata]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Penne Arrabiata</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Acı severler için domates soslu.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">350 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/1583884/pexels-photo-1583884.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Kızarmış patates tabağı]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Patates Tabağı</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Çıtır çıtır patates kızartması.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">200 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/115740/pexels-photo-115740.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Büyük porsiyon kızarmış patates]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Double Patates Tabağı</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Daha fazla lezzet, daha fazla patates.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">250 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/887853/pexels-photo-887853.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Tabakta peynirli sigara böreği]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Sigara Böreği</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Peynirli, çıtır çıtır.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">200 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/1352243/pexels-photo-1352243.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Dilimlenmiş paçanga böreği]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Paçanga Böreği</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Pastırmalı ve kaşarlı lezzet.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">150 TL</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="mezeler" class="py-10 md:py-16 bg-sky-50 rounded-xl my-8 sm:my-10 p-6 md:p-10 animate-on-scroll">
+            <h2 class="section-title text-3xl sm:text-4xl font-playfair font-bold text-center text-slate-700 mb-8 sm:mb-12">Mezeler</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8">
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/5639430/pexels-photo-5639430.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Kasede şakşuka mezesi]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Şakşuka</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Kızarmış sebzeler ve domates sosu.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">150 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/8213950/pexels-photo-8213950.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Kasede kuru cacık]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Kuru Cacık</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Süzme yoğurt ve salatalık ile.</p>
                         <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">120 TL</p>
                     </div>
                 </div>
                 <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/F5F5DC/D2691E?text=Sıcak+Pişiler" alt="[Sıcak servis edilen ev yapımı pişi tabağı]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Yüklenemedi'; this.onerror=null;">
+                    <img src="https://images.pexels.com/photos/6056013/pexels-photo-6056013.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Kasede havuç tarator mezesi]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
                     <div class="p-5 sm:p-6">
-                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Ev Yapımı Pişi</h3>
-                        <p class="text-sm text-gray-600 mb-3 h-20 overflow-y-auto">Sıcak sıcak servis edilen, peynir ve zeytin ezmesi ile.</p>
-                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">100 TL</p>
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Havuç Tarator</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Yoğurtlu havuç mezesi.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">150 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/5639421/pexels-photo-5639421.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Tabakta zeytinyağlı fava]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Fava</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Bakla ezmesi, zeytinyağlı.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">150 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/5914155/pexels-photo-5914155.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Kasede zeytinyağlı humus]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Humus</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Nohut ve tahin ile hazırlanan klasik.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">150 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/8699001/pexels-photo-8699001.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Tabakta zeytinyağlı deniz börülcesi]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Deniz Börülcesi</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Zeytinyağlı ve sarımsaklı.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">200 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/7627414/pexels-photo-7627414.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Kasede elmalı semizotu salatası]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Elmalı Semizotu Salatası</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Yoğurtlu ve cevizli.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">170 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/718742/pexels-photo-718742.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Tabakta beyin salatası]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Beyin Salatası</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Haşlanmış beyin, soğan ve maydanoz ile.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">350 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/210493/pexels-photo-210493.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Tabakta soslu hamsi]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Soslu Hamsi</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Özel sosuyla marine edilmiş hamsi.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">350 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/61180/sardines-fish-food-meal-61180.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Tabakta uskumru çiroz]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Uskumru Çiroz</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Kurutulmuş uskumru, dereotu ile.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">350 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/5410410/pexels-photo-5410410.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Kasede acılı ezme]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Acılı Ezme</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Domates, biber ve baharatlarla.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">150 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/8064431/pexels-photo-8064431.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Kasede atom mezesi]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Atom</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Acı biberli yoğurtlu meze.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">150 TL</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="baslangiclar" class="py-10 md:py-16 bg-sky-50 rounded-xl my-8 sm:my-10 p-6 md:p-10 animate-on-scroll">
-            <h2 class="section-title text-3xl sm:text-4xl font-playfair font-bold text-center text-slate-700 mb-8 sm:mb-12">Başlangıçlar</h2>
+        <section id="arasicaklar" class="py-10 md:py-16 animate-on-scroll">
+            <h2 class="section-title text-3xl sm:text-4xl font-playfair font-bold text-center text-slate-700 mb-8 sm:mb-12">Ara Sıcaklar</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8">
                 <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/E0FFFF/008080?text=Ege+Mezeleri" alt="[Çeşitli Ege mezelerinden oluşan serpme tabak]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Yüklenemedi'; this.onerror=null;">
+                    <img src="https://images.pexels.com/photos/5704333/pexels-photo-5704333.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Tabakta avcı böreği]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
                     <div class="p-5 sm:p-6">
-                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Serpme Meze Tabağı</h3>
-                        <p class="text-sm text-gray-600 mb-3 h-20 overflow-y-auto">Günlük hazırlanan, Ege'nin taptaze mezelerinden oluşan zengin bir seçki: Haydari, Atom, Şakşuka, Ezme, Semizotu.</p>
-                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">220 TL</p>
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Avcı Böreği</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Kıymalı ve cevizli iç harcıyla.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">180 TL</p>
                     </div>
                 </div>
                 <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/FFFACD/FF8C00?text=Çıtır+Kalamar" alt="[Tarator sos ile servis edilen çıtır kalamar tava]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Yüklenemedi'; this.onerror=null;">
+                    <img src="https://images.pexels.com/photos/6749513/pexels-photo-6749513.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Tabakta Arnavut ciğeri]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
                     <div class="p-5 sm:p-6">
-                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Çıtır Kalamar Tava</h3>
-                        <p class="text-sm text-gray-600 mb-3 h-20 overflow-y-auto">Özel sosuyla marine edilmiş, altın renginde kızartılmış taze kalamar, tarator sos eşliğinde.</p>
-                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">280 TL</p>
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Arnavut Ciğeri</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Küp küp doğranmış, baharatlı.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">300 TL</p>
                     </div>
                 </div>
                 <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/FAF0E6/CD5C5C?text=Sigara+Böreği+Peynirli" alt="[Peynirli, çıtır ev yapımı sigara böreği]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Yüklenemedi'; this.onerror=null;">
+                    <img src="https://images.pexels.com/photos/4061423/pexels-photo-4061423.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Tabakta çıtır kalamar tava]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
                     <div class="p-5 sm:p-6">
-                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Ev Yapımı Sigara Böreği</h3>
-                        <p class="text-sm text-gray-600 mb-3 h-20 overflow-y-auto">İncecik yufkadan, peynirli iç harcıyla hazırlanmış, çıtır çıtır.</p>
-                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">140 TL</p>
-                    </div>
-                </div>
-                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/FFFFE0/DAA520?text=Baharatlı+Patates" alt="[Baharatlı parmak patates kızartması]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Yüklenemedi'; this.onerror=null;">
-                    <div class="p-5 sm:p-6">
-                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Parmak Patates</h3>
-                        <p class="text-sm text-gray-600 mb-3 h-20 overflow-y-auto">Özel baharatlarla tatlandırılmış, ketçap ve mayonez eşliğinde.</p>
-                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">90 TL</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="deniz-mahsulleri" class="py-10 md:py-16 animate-on-scroll">
-            <h2 class="section-title text-3xl sm:text-4xl font-playfair font-bold text-center text-slate-700 mb-8 sm:mb-12">Deniz Mahsulleri</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8">
-                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/ADD8E6/000080?text=Izgara+Levrek+Sunumu" alt="[Garnitürleriyle birlikte sunulmuş ızgara levrek balığı]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Yüklenemedi'; this.onerror=null;">
-                    <div class="p-5 sm:p-6">
-                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Izgara Levrek</h3>
-                        <p class="text-sm text-gray-600 mb-3 h-20 overflow-y-auto">Günlük taze, Akdeniz yeşillikleri, patates tava ve limon dilimleriyle servis edilir.</p>
-                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">420 TL</p>
-                    </div>
-                </div>
-                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/B0E0E6/4682B4?text=Marine+Ahtapot+Izgara" alt="[Özel marine edilmiş ızgara ahtapot]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Yüklenemedi'; this.onerror=null;">
-                    <div class="p-5 sm:p-6">
-                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Ahtapot Izgara</h3>
-                        <p class="text-sm text-gray-600 mb-3 h-20 overflow-y-auto">Özel marine edilmiş, közlenmiş biber, roka ve cherry domates ile.</p>
-                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">480 TL</p>
-                    </div>
-                </div>
-                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/AFEEEE/20B2AA?text=Karides+Güveç+Fırından" alt="[Fırından yeni çıkmış tereyağlı karides güveç]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Yüklenemedi'; this.onerror=null;">
-                    <div class="p-5 sm:p-6">
-                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Tereyağlı Karides Güveç</h3>
-                        <p class="text-sm text-gray-600 mb-3 h-20 overflow-y-auto">Sarımsak, pul biber, taze otlar ve kaşar peyniriyle lezzetlendirilmiş, güveçte.</p>
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Kalamar Tava</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Çıtır çıtır, tarator sos ile.</p>
                         <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">450 TL</p>
                     </div>
                 </div>
                 <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/E0FFFF/5F9EA0?text=Izgara+Somon+Fileto" alt="[Sağlıklı ve lezzetli ızgara somon fileto]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Yüklenemedi'; this.onerror=null;">
+                    <img src="https://images.pexels.com/photos/566345/pexels-photo-566345.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Güveçte tereyağlı karides]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
                     <div class="p-5 sm:p-6">
-                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Izgara Somon</h3>
-                        <p class="text-sm text-gray-600 mb-3 h-20 overflow-y-auto">Omega-3 deposu somon, buharda sebzeler ve dereotlu sos ile.</p>
-                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">400 TL</p>
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Tereyağlı Karides</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Sarımsaklı, güveçte.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">450 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/5848530/pexels-photo-5848530.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Fırında kaşarlı mantar dolması]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Kaşarlı Mantar</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Fırında, üzeri kaşar peynirli.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">180 TL</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="izgaralar" class="py-10 md:py-16 bg-sky-50 rounded-xl my-8 sm:my-10 p-6 md:p-10 animate-on-scroll">
-            <h2 class="section-title text-3xl sm:text-4xl font-playfair font-bold text-center text-slate-700 mb-8 sm:mb-12">Izgaralar</h2>
+        <section id="anayemekler" class="py-10 md:py-16 bg-sky-50 rounded-xl my-8 sm:my-10 p-6 md:p-10 animate-on-scroll">
+            <h2 class="section-title text-3xl sm:text-4xl font-playfair font-bold text-center text-slate-700 mb-8 sm:mb-12">Ana Yemekler</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8">
                 <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/F5DEB3/8B4513?text=Lezzetli+Kuzu+Pirzola" alt="[Izgara kuzu pirzola tabağı]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Yüklenemedi'; this.onerror=null;">
+                    <img src="https://images.pexels.com/photos/1860204/pexels-photo-1860204.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Tabakta ızgara köfte, pilav ve salata]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Porsiyon Köfte</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Izgara köfte, pilav ve salata ile.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">350 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/3186654/pexels-photo-3186654.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Çeşitli etlerden oluşan karışık ızgara tabağı]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Karışık Izgara</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Çeşitli ızgara etler bir arada.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">650 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/6210876/pexels-photo-6210876.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Mangalda pişmiş tavuk kanatları]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Tavuk Kanat</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Mangalda pişmiş, lezzetli kanatlar.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">300 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/2673353/pexels-photo-2673353.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Izgara tavuk bonfile ve sebzeler]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Tavuk Bonfile</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Izgara tavuk göğsü, sebzelerle.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">300 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/361184/pexels-photo-361184.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Dilimlenmiş ızgara dana bonfile]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Dana Bonfile</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Yumuşacık dana bonfile dilimleri.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">600 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/603028/pexels-photo-603028.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Izgara kuzu pirzola tabağı]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
                     <div class="p-5 sm:p-6">
                         <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Kuzu Pirzola</h3>
-                        <p class="text-sm text-gray-600 mb-3 h-20 overflow-y-auto">Kekik ve baharatlarla marine edilmiş, közlenmiş domates, biber ve bulgur pilavı eşliğinde.</p>
-                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">480 TL</p>
+                        <p class="text-sm text-gray-600 mb-3 description">Izgarada pişmiş, nefis kuzu pirzola.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">600 TL</p>
                     </div>
                 </div>
                 <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/FFDAB9/A0522D?text=Acılı+Adana+Kebap" alt="[Lavaş ve pilav ile servis edilen Adana kebap]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Yüklenemedi'; this.onerror=null;">
+                    <img src="https://images.pexels.com/photos/410648/pexels-photo-410648.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Sacda pişmiş et ve sebze kavurma]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
                     <div class="p-5 sm:p-6">
-                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Adana Kebap</h3>
-                        <p class="text-sm text-gray-600 mb-3 h-20 overflow-y-auto">Acılı, zırhta çekilmiş kuzu etinden, yanında bulgur pilavı, sumaklı soğan ve lavaş.</p>
-                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">380 TL</p>
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Saç Kavurma</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Et ve sebzelerin sacda buluşması.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">950 TL</p>
                     </div>
                 </div>
                 <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/FFE4B5/D2691E?text=Izgara+Tavuk+Şiş" alt="[Sebzelerle birlikte sunulan ızgara tavuk şiş]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Yüklenemedi'; this.onerror=null;">
+                    <img src="https://images.pexels.com/photos/262959/pexels-photo-262959.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Izgara çipura balığı ve garnitürleri]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
                     <div class="p-5 sm:p-6">
-                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Tavuk Şiş</h3>
-                        <p class="text-sm text-gray-600 mb-3 h-20 overflow-y-auto">Özel terbiyeli tavuk parçaları, pilav, mevsim salatası ve közlenmiş sebzeler ile.</p>
-                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">320 TL</p>
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Çipura</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Taze ızgara çipura.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">450 TL</p>
                     </div>
                 </div>
                 <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/DEB887/800000?text=Ev+Yapımı+Kasap+Köfte" alt="[Piyaz ve patates kızartması ile kasap köfte]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Yüklenemedi'; this.onerror=null;">
+                    <img src="https://images.pexels.com/photos/842142/pexels-photo-842142.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Izgara levrek balığı ve limon dilimleri]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
                     <div class="p-5 sm:p-6">
-                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Kasap Köfte</h3>
-                        <p class="text-sm text-gray-600 mb-3 h-20 overflow-y-auto">Dana kıymadan hazırlanmış, patates kızartması ve piyaz eşliğinde.</p>
-                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">300 TL</p>
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Levrek</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Izgara veya tavada taze levrek.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">450 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/22804/appetite-fish-fried-fried-fish.jpg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Tavada kızarmış mezgit balığı]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Mezgit</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Tava veya ızgara mezgit.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">400 TL</p>
                     </div>
                 </div>
             </div>
@@ -465,109 +638,443 @@
         <section id="salatalar" class="py-10 md:py-16 animate-on-scroll">
             <h2 class="section-title text-3xl sm:text-4xl font-playfair font-bold text-center text-slate-700 mb-8 sm:mb-12">Salatalar</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8">
-                 <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/90EE90/006400?text=Taptaze+Mevsim+Salata" alt="[Bol yeşillikli taptaze mevsim salatası]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Yüklenemedi'; this.onerror=null;">
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/1132047/pexels-photo-1132047.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Çeşitli taze meyvelerden oluşan tabak]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Meyve Tabağı</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Taze mevsim meyveleri.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">200 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/5938/food-salad-healthy-lunch.jpg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Parmesanlı ve domatesli roka salatası]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Roka Salata</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Taze roka, domates ve parmesan.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">250 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/257816/pexels-photo-257816.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Cevizli ve nar ekşili Gavurdağı salatası]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Gavurdağ Salata</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Cevizli ve nar ekşili.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">250 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Karışık yeşillikli mevsim salatası]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
                     <div class="p-5 sm:p-6">
                         <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Mevsim Salata</h3>
-                        <p class="text-sm text-gray-600 mb-3 h-20 overflow-y-auto">Taptaze mevsim yeşillikleri, domates, salatalık, havuç, mısır, zeytinyağı ve limon sosu ile.</p>
-                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">120 TL</p>
+                        <p class="text-sm text-gray-600 mb-3 description">Taptaze mevsim yeşillikleri.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">200 TL</p>
                     </div>
                 </div>
                 <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/98FB98/2E8B57?text=Nar+Ekşili+Gavurdağı" alt="[Cevizli ve nar ekşili Gavurdağı salatası]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Yüklenemedi'; this.onerror=null;">
+                    <img src="https://images.pexels.com/photos/406152/pexels-photo-406152.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Domates, salatalık ve soğanlı çoban salata]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
                     <div class="p-5 sm:p-6">
-                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Gavurdağı Salatası</h3>
-                        <p class="text-sm text-gray-600 mb-3 h-20 overflow-y-auto">İnce kıyılmış domates, salatalık, biber, soğan, ceviz ve nar ekşili özel sos.</p>
-                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">150 TL</p>
-                    </div>
-                </div>
-                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/9ACD32/556B2F?text=Parmesanlı+Roka+Salatası" alt="[Parmesan peyniri ve balzamik sirkeli roka salatası]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Yüklenemedi'; this.onerror=null;">
-                    <div class="p-5 sm:p-6">
-                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Roka Salatası Parmesanlı</h3>
-                        <p class="text-sm text-gray-600 mb-3 h-20 overflow-y-auto">Taze roka yaprakları, çeri domates, rendelenmiş parmesan peyniri ve balzamik sirke.</p>
-                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">160 TL</p>
-                    </div>
-                </div>
-                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/6B8E23/32CD32?text=Izgara+Tavuklu+Doyurucu+Salata" alt="[Izgara tavuk dilimleri ile zenginleştirilmiş salata]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Yüklenemedi'; this.onerror=null;">
-                    <div class="p-5 sm:p-6">
-                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Izgara Tavuklu Salata</h3>
-                        <p class="text-sm text-gray-600 mb-3 h-20 overflow-y-auto">Akdeniz yeşillikleri, ızgara tavuk dilimleri, mısır, kruton ve özel sos.</p>
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Çoban Salata</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Domates, salatalık, biber ve soğan.</p>
                         <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">200 TL</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="tatlilar" class="py-10 md:py-16 bg-sky-50 rounded-xl my-8 sm:my-10 p-6 md:p-10 animate-on-scroll">
-            <h2 class="section-title text-3xl sm:text-4xl font-playfair font-bold text-center text-slate-700 mb-8 sm:mb-12">Tatlılar</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/FFC0CB/8B0000?text=Dondurmalı+İrmik+Helvası" alt="[Maraş dondurması ile servis edilen sıcak irmik helvası]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Yüklenemedi'; this.onerror=null;">
-                    <div class="p-5 sm:p-6">
-                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Dondurmalı İrmik Helvası</h3>
-                        <p class="text-sm text-gray-600 mb-3 h-20 overflow-y-auto">Sıcak irmik helvası üzerinde bir top Maraş dondurması ile, tarçın eşliğinde.</p>
-                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">140 TL</p>
-                    </div>
-                </div>
-                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/FFEBCD/A52A2A?text=Fırınlanmış+Sütlaç" alt="[Üzeri nar gibi kızarmış geleneksel fırın sütlaç]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Yüklenemedi'; this.onerror=null;">
-                    <div class="p-5 sm:p-6">
-                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Fırın Sütlaç</h3>
-                        <p class="text-sm text-gray-600 mb-3 h-20 overflow-y-auto">Geleneksel yöntemlerle hazırlanmış, üzeri nar gibi kızarmış, fındık serpilmiş.</p>
-                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">110 TL</p>
-                    </div>
-                </div>
-                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/FFF0F5/FF69B4?text=Rengarenk+Meyve+Tabağı" alt="[Çeşitli taze mevsim meyvelerinden oluşan tabak]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Yüklenemedi'; this.onerror=null;">
-                    <div class="p-5 sm:p-6">
-                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Mevsim Meyveleri Tabağı</h3>
-                        <p class="text-sm text-gray-600 mb-3 h-20 overflow-y-auto">En taze ve çeşitli mevsim meyveleri, hafif bal sosu ile.</p>
-                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">180 TL</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="icecekler" class="py-10 md:py-16 animate-on-scroll">
+        <section id="icecekler-alkolsuz" class="py-10 md:py-16 bg-sky-50 rounded-xl my-8 sm:my-10 p-6 md:p-10 animate-on-scroll">
             <h2 class="section-title text-3xl sm:text-4xl font-playfair font-bold text-center text-slate-700 mb-8 sm:mb-12">İçecekler</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8">
                 <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/F5F5DC/8B4513?text=Köpüklü+Türk+Kahvesi" alt="[Lokum ile servis edilen köpüklü Türk kahvesi]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Yüklenemedi'; this.onerror=null;">
+                    <img src="https://images.pexels.com/photos/327090/pexels-photo-327090.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Bir şişe ve bardak su]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
                     <div class="p-5 sm:p-6">
-                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Türk Kahvesi</h3>
-                        <p class="text-sm text-gray-600 mb-3 h-20 overflow-y-auto">Bol köpüklü, yanında lokum ile servis edilir.</p>
-                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">60 TL</p>
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Su</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Doğal kaynak suyu.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">20 TL</p>
                     </div>
                 </div>
                 <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/FFFACD/FFD700?text=Naneli+Ev+Limonatası" alt="[Nane yapraklarıyla süslenmiş ev yapımı limonata]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Yüklenemedi'; this.onerror=null;">
+                    <img src="https://images.pexels.com/photos/50593/coca-cola-cold-drink-soft-drink-coke-50593.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Buzlu bir bardak kola]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
                     <div class="p-5 sm:p-6">
-                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Ev Yapımı Limonata</h3>
-                        <p class="text-sm text-gray-600 mb-3 h-20 overflow-y-auto">Taze sıkılmış limonlardan, nane ferahlığıyla, buz gibi.</p>
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Kola</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Serinletici gazlı içecek.</p>
                         <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">80 TL</p>
                     </div>
                 </div>
                 <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/FFF5EE/A0522D?text=Tavşan+Kanı+Çay" alt="[İnce belli bardakta demlenmiş Türk çayı]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Yüklenemedi'; this.onerror=null;">
+                    <img src="https://images.pexels.com/photos/2775860/pexels-photo-2775860.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Buzlu bir bardak Fanta]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
                     <div class="p-5 sm:p-6">
-                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Demleme Çay</h3>
-                        <p class="text-sm text-gray-600 mb-3 h-20 overflow-y-auto">İnce belli bardakta, tavşan kanı, günün her saati.</p>
-                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">40 TL</p>
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Fanta</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Portakal aromalı gazlı içecek.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">80 TL</p>
                     </div>
                 </div>
                 <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/E6E6FA/483D8B?text=Buzlu+Soğuk+Kahve" alt="[Çeşitli buzlu soğuk kahve seçenekleri]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Yüklenemedi'; this.onerror=null;">
+                    <img src="https://images.pexels.com/photos/3819969/pexels-photo-3819969.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Buzlu bir bardak Sprite]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
                     <div class="p-5 sm:p-6">
-                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Soğuk Kahve Çeşitleri</h3>
-                        <p class="text-sm text-gray-600 mb-3 h-20 overflow-y-auto">Latte, Mocha, Americano ve daha fazlası, buzlu ve ferahlatıcı.</p>
-                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">90 TL</p>
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Sprite</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Limon ve misket limonu aromalı.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">80 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/96974/pexels-photo-96974.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Bir şişe sade maden suyu]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Soda</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Sade maden suyu.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">50 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/1292294/pexels-photo-1292294.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Çeşitli meyveli soda şişeleri]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Meyveli Soda</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Çeşitli meyve aromalarıyla.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">75 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/13045000/pexels-photo-13045000.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Büyük bir bardak şalgam suyu]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Şalgam Suyu (Büyük)</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Acılı veya acısız seçenekleriyle.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">120 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/775031/pexels-photo-775031.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Küçük bir bardak şalgam suyu]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Şalgam Suyu (Küçük)</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Geleneksel lezzet.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">60 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/2067048/pexels-photo-2067048.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[İnce belli bardakta Türk çayı]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Çay (Bardak)</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Tavşan kanı demli çay.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">30 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/39347/tea-markup-tea-cup-green-tea-39347.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Bir fincan sıcak çay]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Fincan Çay</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Keyifli bir mola için.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">50 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/904620/pexels-photo-904620.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Köpüklü bir fincan Türk kahvesi ve lokum]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Türk Kahvesi</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Bol köpüklü, geleneksel tat.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">100 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Bir fincan sütlü Nescafe]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Nescafe</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Sütlü veya sütsüz seçenekleriyle.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">100 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/1417945/pexels-photo-1417945.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Çeşitli bitki çayları]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Bitki Çayı Çeşitleri</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Adaçayı, ıhlamur, papatya vb.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">75 TL</p>
                     </div>
                 </div>
             </div>
         </section>
 
+        <section id="alkollu-icecekler" class="py-10 md:py-16 animate-on-scroll">
+            <h2 class="section-title text-3xl sm:text-4xl font-playfair font-bold text-center text-slate-700 mb-8 sm:mb-12">Alkollü İçecekler</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8">
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/1267330/pexels-photo-1267330.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Bir şişe Tuborg bira]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Tuborg</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">50cl Şişe.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">200 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/1089930/pexels-photo-1089930.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Bir şişe Carlsberg bira]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Carlsberg</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">50cl Şişe.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">250 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/3601097/pexels-photo-3601097.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Bir şişe Corona bira limon dilimiyle]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Corona</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">35.5cl Şişe.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">300 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/1267359/pexels-photo-1267359.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Bir şişe Efes Özel Seri bira]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Efes Özel Seri</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">50cl Şişe.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">250 TL</p>
+                    </div>
+                </div>
+
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/1283219/pexels-photo-1283219.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Bir kadeh tek rakı]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Rakı (Tek)</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Çeşitlerimizden seçeceğiniz tek rakı.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">200 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/434283/pexels-photo-434283.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Bir kadeh double rakı]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Rakı (Double)</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Çeşitlerimizden seçeceğiniz double rakı.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">350 TL</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/1564534/pexels-photo-1564534.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[20cl Yeni Rakı şişesi]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Yeni Rakı (20cl)</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Klasikleşmiş lezzet.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">650 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/1564534/pexels-photo-1564534.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[35cl Yeni Rakı şişesi]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Yeni Rakı (35cl)</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Daha uzun sohbetler için.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">1000 TL</p>
+                    </div>
+                </div>
+                 <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/1564534/pexels-photo-1564534.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[50cl Yeni Rakı şişesi]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Yeni Rakı (50cl)</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Paylaşmanın keyfi.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">1400 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/1564534/pexels-photo-1564534.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[70cl Yeni Rakı şişesi]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Yeni Rakı (70cl)</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Kalabalık sofraların vazgeçilmezi.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">1800 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/1564534/pexels-photo-1564534.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[100cl Yeni Rakı şişesi]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Yeni Rakı (100cl)</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Büyük keyifler için.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">2300 TL</p>
+                    </div>
+                </div>
+
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/7523504/pexels-photo-7523504.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[20cl Tekirdağ Altın Seri rakı şişesi]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Tekirdağ Altın Seri (20cl)</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Altın değerinde bir tat.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">750 TL</p>
+                    </div>
+                </div>
+                 <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/7523504/pexels-photo-7523504.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[35cl Tekirdağ Altın Seri rakı şişesi]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Tekirdağ Altın Seri (35cl)</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Özel anların rakısı.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">1100 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/7523504/pexels-photo-7523504.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[50cl Tekirdağ Altın Seri rakı şişesi]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Tekirdağ Altın Seri (50cl)</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Kaliteli ve dengeli.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">1500 TL</p>
+                    </div>
+                </div>
+                 <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/7523504/pexels-photo-7523504.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[70cl Tekirdağ Altın Seri rakı şişesi]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Tekirdağ Altın Seri (70cl)</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Damaklarda iz bırakan.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">2000 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/7523504/pexels-photo-7523504.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[100cl Tekirdağ Altın Seri rakı şişesi]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Tekirdağ Altın Seri (100cl)</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Zirvedeki lezzet.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">2400 TL</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/1283208/pexels-photo-1283208.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[20cl Efe Gold rakı şişesi]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Efe Gold Rakı (20cl)</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Yumuşak içimli.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">750 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/1283208/pexels-photo-1283208.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[35cl Efe Gold rakı şişesi]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Efe Gold Rakı (35cl)</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Keyifli anların eşlikçisi.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">1100 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/1283208/pexels-photo-1283208.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[50cl Efe Gold rakı şişesi]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Efe Gold Rakı (50cl)</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Dengeli ve hoş.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">1500 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/1283208/pexels-photo-1283208.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[70cl Efe Gold rakı şişesi]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Efe Gold Rakı (70cl)</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Dost meclislerinin tercihi.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">2000 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/1283208/pexels-photo-1283208.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[100cl Efe Gold rakı şişesi]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Efe Gold Rakı (100cl)</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Büyük kutlamalar için.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">2400 TL</p>
+                    </div>
+                </div>
+
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/7901023/pexels-photo-7901023.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[20cl Beylerbeyi Göbek rakı şişesi]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Beylerbeyi Göbek (20cl)</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Saf ve asil.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">850 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/7901023/pexels-photo-7901023.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[35cl Beylerbeyi Göbek rakı şişesi]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Beylerbeyi Göbek (35cl)</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Rakı severlerin gözdesi.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">1300 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/7901023/pexels-photo-7901023.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[50cl Beylerbeyi Göbek rakı şişesi]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Beylerbeyi Göbek (50cl)</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">İçimi rahat, lezzeti eşsiz.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">1800 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/7901023/pexels-photo-7901023.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[70cl Beylerbeyi Göbek rakı şişesi]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Beylerbeyi Göbek (70cl)</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Unutulmaz anlar için.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">2400 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/7901023/pexels-photo-7901023.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[100cl Beylerbeyi Göbek rakı şişesi]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Beylerbeyi Göbek (100cl)</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">En özel anların rakısı.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">3000 TL</p>
+                    </div>
+                </div>
+
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/2790143/pexels-photo-2790143.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Bir kadeh tek Red Label viski]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Red Label Viski (Tek)</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Klasik İskoç viskisi.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">250 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/1267697/pexels-photo-1267697.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Bir kadeh double Red Label viski]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Red Label Viski (Double)</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Daha yoğun bir keyif.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">400 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/13045830/pexels-photo-13045830.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[35cl Red Label viski şişesi]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Red Label Viski (35cl)</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Kişisel keyif için ideal.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">1500 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/13045830/pexels-photo-13045830.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[50cl Red Label viski şişesi]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Red Label Viski (50cl)</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Arkadaşlarla paylaşmalık.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">2000 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/13045830/pexels-photo-13045830.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[70cl Red Label viski şişesi]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Red Label Viski (70cl)</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Standart şişe boyutu.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">2500 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/13045830/pexels-photo-13045830.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[100cl Red Label viski şişesi]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Red Label Viski (100cl)</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Büyük gruplar için.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">3000 TL</p>
+                    </div>
+                </div>
+
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/1283219/pexels-photo-1283219.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Bir kadeh kırmızı şarap]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Şarap (Kadeh)</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Kırmızı, Beyaz veya Rose seçenekleriyle.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">300 TL</p>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/1378849/pexels-photo-1378849.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="[Bir şişe kırmızı şarap ve kadehler]" class="w-full h-48 sm:h-56 object-cover" loading="lazy" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Resim+Bulunamadı'; this.onerror=null;">
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold font-playfair text-slate-700 mb-2">Şarap (Şişe)</h3>
+                        <p class="text-sm text-gray-600 mb-3 description">Kırmızı, Beyaz veya Rose seçenekleriyle.</p>
+                        <p class="text-md sm:text-lg font-semibold text-blue-600 mt-2">1000 TL</p>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section id="iletisim" class="py-10 md:py-16 bg-blue-600 text-white rounded-xl my-8 sm:my-10 p-6 md:p-10 animate-on-scroll">
             <h2 class="section-title text-3xl sm:text-4xl font-playfair font-bold text-center text-white mb-8 sm:mb-12">Bize Ulaşın</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 items-center">
@@ -592,7 +1099,7 @@
                 </div>
                 <div class="w-full rounded-xl overflow-hidden shadow-xl map-container">
                      <iframe
-                        src="https://maps.google.com/maps?q=39.584310213629635,26.87524120183661&hl=tr&z=17&output=embed"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3050.039249968581!2d26.93068701539596!3d39.58111107947088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMznCsDM0JzUyLjAiTiAyNsKwNTUnNTguNCJF!5e0!3m2!1str!2str!4v1620000000000!5m2!1str!2str"
                         width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
                         title="Mazi Cafe Konumu Google Haritalarda">
                     </iframe>
@@ -616,7 +1123,7 @@
 
     <script>
         // Smooth scroll for navigation links
-        document.querySelectorAll('nav a[href^="#"], a.mobile-nav-link[href^="#"], .hero-section a[href^="#"]').forEach(anchor => {
+        document.querySelectorAll('header nav a[href^="#"], a.mobile-nav-link[href^="#"], .hero-section a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const targetId = this.getAttribute('href');
@@ -674,15 +1181,21 @@
         // Başa dön butonu işlevselliği
         const backToTopButton = document.getElementById('back-to-top');
         window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.add('show');
+            if (window.pageYOffset > 300) { // Show button after 300px scroll
+                if (!backToTopButton.classList.contains('show')) {
+                    backToTopButton.classList.add('show');
+                }
             } else {
-                backToTopButton.classList.remove('show');
+                if (backToTopButton.classList.contains('show')) {
+                    backToTopButton.classList.remove('show');
+                }
             }
         });
-        backToTopButton.addEventListener('click', () => {
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent any default action
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
+
 
         // Kaydırmada animasyon için Intersection Observer
         const sectionsToAnimate = document.querySelectorAll('section.animate-on-scroll');
@@ -704,6 +1217,13 @@
         sectionsToAnimate.forEach(section => {
             sectionObserver.observe(section);
         });
+
+        // Google Harita için örnek bir src ekledim, kendi konumunuzla güncelleyebilirsiniz.
+        // Örnek: https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d...
+        // Güvenlik nedeniyle doğrudan bir API anahtarı veya çok spesifik bir konum eklemedim.
+        // Kendi Google Maps Embed API kodunuzu buraya yerleştirebilirsiniz.
+        // Mevcut iframe src'si "https://maps.google.com/maps?q=39.584310213629635,26.87524120183661&hl=tr&z=17&output=embed" olarak bırakıldı,
+        // bu genellikle çalışmaz ve kendi geçerli embed URL'nizle değiştirilmelidir.
     </script>
 
 </body>
