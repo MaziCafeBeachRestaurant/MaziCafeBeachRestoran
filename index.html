@@ -172,6 +172,12 @@
             .map-container { 
                  height: 300px; /* Mobil için harita yüksekliği */
             }
+
+            /* Hata ayıklama: Alkollü İçecekler bölümünün mobil cihazlarda her zaman görünür olmasını sağla */
+            #alkollu-icecekler.animate-on-scroll {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         @media (min-width: 768px) { /* md ve üzeri için harita yüksekliği */
             .map-container {
